@@ -1,0 +1,123 @@
+{
+ "schema": "hgkairak-glossary/1",
+ "note": "Authoritative terminology and voice decisions. state: proposed (agent draft, needs human approval) | approved | conflicting.",
+ "decisions": [
+  {
+   "id": "V-DOG",
+   "scope": "강아지 도우미 (っス 말투, おやびん/オヤビン 호칭)",
+   "source": "おやびん / ～っス / ～っスか",
+   "output": "두목 / ～슴다·～임다 / ～슴까",
+   "state": "approved",
+   "evidence": "전작 도우미 대사 결정 승계. 이번 작품 도우미 대사: 07D2D8-07FD40",
+   "approval": "사용자 승인 2026-09-28 (슴다/두목, 세부 어미는 에이전트 재량)",
+   "rules": [
+    "고르다 → 고르겠슴다 (고르슴다 금지). 사용자 지시 2026-09-28. 12칸 초과 시 앞 조사 생략(다음 상대 고르겠슴다！)"
+   ]
+  },
+  {
+   "id": "T-JANPOWER",
+   "source": "雀パワー / ジャンパワー / 雀Ｐ",
+   "output": "작파워 / 작파워 / 작Ｐ",
+   "state": "proposed",
+   "evidence": "전작(taisen1) 결정 승계"
+  },
+  {
+   "id": "T-NURIKAE",
+   "source": "牌塗り替え(技)",
+   "output": "패 바꾸기",
+   "state": "proposed",
+   "evidence": "전작(taisen1) 결정 승계"
+  },
+  {
+   "id": "T-TSUMIKOMI",
+   "source": "ツミコミ (ちょっと/かなり/すごい/スペシャル)",
+   "output": "쌓기 (살짝/꽤/엄청/스페셜)",
+   "state": "proposed",
+   "evidence": "積み込み = 패산 조작 속임수 | 전작(taisen1) 결정 승계"
+  },
+  {
+   "id": "T-KEI",
+   "source": "～の刑 (벌칙 메뉴)",
+   "output": "～형 (예: 블루머형)",
+   "state": "approved",
+   "evidence": "메뉴 칸 수가 작아 조사 생략 | 전작(taisen1) 결정 승계",
+   "approval": "사용자 승인 2026-09-28 (메뉴 축약 허용)"
+  },
+  {
+   "id": "T-YURUSU",
+   "source": "許す",
+   "output": "용서",
+   "state": "approved",
+   "approval": "사용자 승인 2026-09-28",
+   "evidence": "전작(taisen1) 결정 승계"
+  },
+  {
+   "id": "T-YAKU",
+   "source": "역 이름",
+   "output": "한국 리치마작 커뮤니티 통용 독음/한자음 (쯔모, 리치, 핑후, 탕야오, 역패, 이페코, 영상개화, 창깡, 도라, 치또이, 산안커 …)",
+   "state": "approved",
+   "evidence": "칸 수(2~5칸) 제한. 数え役満은 4칸 제한으로 '누적역만' | 전작(taisen1) 결정 승계",
+   "approval": "사용자 승인 2026-09-28 (칸 제한 축약 허용)"
+  },
+  {
+   "id": "T-HAITEI",
+   "source": "ハイテイ (0AB430, 0AB43C 두 번)",
+   "output": "해저로월 (둘 다)",
+   "state": "approved",
+   "evidence": "원문이 동일해 해저로월/하저로어 구분 불가 — 런타임 확인 필요 | 전작(taisen1) 결정 승계",
+   "approval": "사용자 결정 2026-09-28: 두 항목 모두 해저로월"
+  },
+  {
+   "id": "V-KOYOMI",
+   "scope": "코요미 (무녀, 전작에서 재등장)",
+   "source": "キミ",
+   "output": "털털한 반말, 너",
+   "state": "proposed",
+   "evidence": "전작 V-KOYOMI 승계"
+  },
+  {
+   "id": "V-MILLION",
+   "scope": "밀리언 (마법소녀, 개 싫어함, 전작 재등장)",
+   "output": "새침한 반말",
+   "state": "proposed",
+   "evidence": "전작 V-MILLION 승계"
+  },
+  {
+   "id": "V-KAIN",
+   "scope": "카인 (평성 알몸 사무라이, 拙者/ゴザる/おヌシ, 영어 섞기) — 전작 사무라이와 같은 말투 계열",
+   "source": "拙者 / ゴザる / おヌシ",
+   "output": "소인 / ~로소이다·~소이다 / 그대 / 영어 음차",
+   "state": "proposed",
+   "evidence": "전작 V-SAMURAI 승계"
+  },
+  {
+   "id": "N-NAMES",
+   "scope": "캐릭터 이름 (명찰 대사 07D830-07DB08)",
+   "source": "クロダ ミキ / メルル / コイヌバラ マユ / オスズ / タカギ ヤエコ / サンノー ユリカ / ペンギン虐待女 / Ｍ－１号 / ノロタ ノロミ / フジクラ マコト / メア / ヨシムラ ミサ / カイン / コヨミ / ミリオン",
+   "output": "쿠로다 미키 / 메루루 / 코이누바라 마유 / 오스즈 / 타카기 야에코 / 산노 유리카 / 펭귄 학대녀 / Ｍ－１호 / 노로타 노로미 / 후지쿠라 마코토 / 메아 / 요시무라 미사 / 카인 / 코요미 / 밀리언",
+   "state": "proposed",
+   "evidence": "가타카나 표기 그대로 음차. 한자 표기(黒田 美樹 등) 미확인"
+  },
+  {
+   "id": "T-JANFOOD",
+   "source": "ジャン・フード",
+   "output": "작푸드",
+   "state": "proposed",
+   "evidence": "雀パワー=작파워(T-JANPOWER)와 같은 방식"
+  },
+  {
+   "id": "T-DEGUCHI",
+   "source": "(世界の)出口",
+   "output": "(세계의) 출구",
+   "state": "proposed",
+   "evidence": "줄거리: 만화 세계에 갇힌 주인공이 출구를 찾음"
+  },
+  {
+   "id": "T-OSHIOKI",
+   "source": "お仕置き / おしおき",
+   "output": "벌칙",
+   "state": "proposed",
+   "evidence": "전작 번역(おしおきタイム→벌칙 타임) 계열"
+  }
+ ]
+}

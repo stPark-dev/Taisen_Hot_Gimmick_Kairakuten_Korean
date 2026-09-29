@@ -1,0 +1,16 @@
+# 원본 ROM과 원본에서 만든 산출물은 절대 커밋하지 않는다
+*.zip
+roms/
+out/
+*.bin
+# 분석·실행 부산물
+work/
+run_test/
+.pytest_cache/
+__pycache__/
+*.pyc
+# 참고용 이미지 (게임 자료, 사용자 원본)
+/poster.png
+/title_ko.png
+*.jpeg
+roms폴더에*.txt

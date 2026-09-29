@@ -1,0 +1,1004 @@
+{
+ "schema": "hgkairak-graphics-text/1",
+ "entries": [
+  {
+   "id": "G0707C4",
+   "template": "0707C4",
+   "style": "bubble",
+   "source": "カンっス!",
+   "ko": "깡임다!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0707D4",
+   "template": "0707D4",
+   "style": "bubble",
+   "source": "ポンっス!",
+   "ko": "퐁임다!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0707E4",
+   "template": "0707E4",
+   "style": "bubble",
+   "source": "チーっス!",
+   "ko": "치임다!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0707F4",
+   "template": "0707F4",
+   "style": "bubble",
+   "source": "リーチ行くっス!",
+   "ko": "리치 가겠슴다!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070804",
+   "template": "070804",
+   "style": "bubble",
+   "source": "ツモっス!",
+   "ko": "쯔모임다!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070814",
+   "template": "070814",
+   "style": "bubble",
+   "source": "ロンっス!",
+   "ko": "론임다!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070824",
+   "template": "070824",
+   "style": "bubble",
+   "source": "テンパイ!",
+   "ko": "텐파이!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070834",
+   "template": "070834",
+   "style": "bubble",
+   "source": "ノーテン。",
+   "ko": "노텐.",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070844",
+   "template": "070844",
+   "style": "bubble",
+   "source": "流局っス!",
+   "ko": "유국임다!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07088C",
+   "template": "07088C",
+   "style": "bubble",
+   "source": "カン!",
+   "ko": "깡!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07089C",
+   "template": "07089C",
+   "style": "bubble",
+   "source": "ポン!",
+   "ko": "퐁!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0708AC",
+   "template": "0708AC",
+   "style": "bubble",
+   "source": "チー!",
+   "ko": "치!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0708BC",
+   "template": "0708BC",
+   "style": "bubble",
+   "source": "リーチ!!",
+   "ko": "리치!!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0708CC",
+   "template": "0708CC",
+   "style": "bubble",
+   "source": "ツモ!",
+   "ko": "쯔모!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0708DC",
+   "template": "0708DC",
+   "style": "bubble",
+   "source": "ロン!",
+   "ko": "론!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0708EC",
+   "template": "0708EC",
+   "style": "bubble",
+   "source": "テンパイ!",
+   "ko": "텐파이!",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0708FC",
+   "template": "0708FC",
+   "style": "bubble",
+   "source": "ノーテン。",
+   "ko": "노텐.",
+   "state": "needs_review",
+   "note": "도우미/공통 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07090C",
+   "template": "07090C",
+   "style": "bubble",
+   "source": "カンよ!",
+   "ko": "깡이야!",
+   "state": "needs_review",
+   "note": "クロダ ミキ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07091C",
+   "template": "07091C",
+   "style": "bubble",
+   "source": "ポンよ!",
+   "ko": "퐁이야!",
+   "state": "needs_review",
+   "note": "クロダ ミキ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07092C",
+   "template": "07092C",
+   "style": "bubble",
+   "source": "チーよ!",
+   "ko": "치야!",
+   "state": "needs_review",
+   "note": "クロダ ミキ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07093C",
+   "template": "07093C",
+   "style": "bubble",
+   "source": "行くわよ、\nOLリーチ!!",
+   "ko": "간다,\nOL 리치!!",
+   "state": "needs_review",
+   "note": "クロダ ミキ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07094C",
+   "template": "07094C",
+   "style": "bubble",
+   "source": "ツモよ!",
+   "ko": "쯔모야!",
+   "state": "needs_review",
+   "note": "クロダ ミキ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07095C",
+   "template": "07095C",
+   "style": "bubble",
+   "source": "ロ～ン!!",
+   "ko": "로오온!!",
+   "state": "needs_review",
+   "note": "クロダ ミキ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07096C",
+   "template": "07096C",
+   "style": "bubble",
+   "source": "カンです!",
+   "ko": "깡이에요!",
+   "state": "needs_review",
+   "note": "メルル 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07097C",
+   "template": "07097C",
+   "style": "bubble",
+   "source": "ポンです!",
+   "ko": "퐁이에요!",
+   "state": "needs_review",
+   "note": "メルル 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07098C",
+   "template": "07098C",
+   "style": "bubble",
+   "source": "チーです!",
+   "ko": "치예요!",
+   "state": "needs_review",
+   "note": "メルル 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07099C",
+   "template": "07099C",
+   "style": "bubble",
+   "source": "いくよぉ、\nメルヘン・リーチ!",
+   "ko": "간다아,\n메르헨 리치!",
+   "state": "needs_review",
+   "note": "メルル 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0709AC",
+   "template": "0709AC",
+   "style": "bubble",
+   "source": "ツモぉ!!",
+   "ko": "쯔모오!!",
+   "state": "needs_review",
+   "note": "メルル 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0709BC",
+   "template": "0709BC",
+   "style": "bubble",
+   "source": "ロンでーす!!",
+   "ko": "론이에요오!!",
+   "state": "needs_review",
+   "note": "メルル 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0709CC",
+   "template": "0709CC",
+   "style": "bubble",
+   "source": "カ～ン!",
+   "ko": "까앙!",
+   "state": "needs_review",
+   "note": "コイヌバラ マユ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0709DC",
+   "template": "0709DC",
+   "style": "bubble",
+   "source": "ポ～ン!",
+   "ko": "포옹!",
+   "state": "needs_review",
+   "note": "コイヌバラ マユ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0709EC",
+   "template": "0709EC",
+   "style": "bubble",
+   "source": "チ～!",
+   "ko": "치이!",
+   "state": "needs_review",
+   "note": "コイヌバラ マユ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0709FC",
+   "template": "0709FC",
+   "style": "bubble",
+   "source": "閃光!\nコークスクリュー・リーチ!!",
+   "ko": "섬광!\n코크스크루 리치!!",
+   "state": "needs_review",
+   "note": "コイヌバラ マユ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070A0C",
+   "template": "070A0C",
+   "style": "bubble",
+   "source": "ツモぉ!!",
+   "ko": "쯔모오!!",
+   "state": "needs_review",
+   "note": "コイヌバラ マユ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070A1C",
+   "template": "070A1C",
+   "style": "bubble",
+   "source": "ロンだよ～!",
+   "ko": "론이야아!",
+   "state": "needs_review",
+   "note": "コイヌバラ マユ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070A2C",
+   "template": "070A2C",
+   "style": "bubble",
+   "source": "カンだわ!",
+   "ko": "깡이에요!",
+   "state": "needs_review",
+   "note": "オスズ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070A3C",
+   "template": "070A3C",
+   "style": "bubble",
+   "source": "ポンだわ!",
+   "ko": "퐁이에요!",
+   "state": "needs_review",
+   "note": "オスズ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070A4C",
+   "template": "070A4C",
+   "style": "bubble",
+   "source": "チーだわ!",
+   "ko": "치예요!",
+   "state": "needs_review",
+   "note": "オスズ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070A5C",
+   "template": "070A5C",
+   "style": "bubble",
+   "source": "いくわよ、\n大江戸リーチ!!",
+   "ko": "갑니다,\n대에도 리치!!",
+   "state": "needs_review",
+   "note": "オスズ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070A6C",
+   "template": "070A6C",
+   "style": "bubble",
+   "source": "ツモだわ!",
+   "ko": "쯔모예요!",
+   "state": "needs_review",
+   "note": "オスズ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070A7C",
+   "template": "070A7C",
+   "style": "bubble",
+   "source": "ロンだわ!",
+   "ko": "론이에요!",
+   "state": "needs_review",
+   "note": "オスズ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070A8C",
+   "template": "070A8C",
+   "style": "bubble",
+   "source": "カンですわ!",
+   "ko": "깡이랍니다!",
+   "state": "needs_review",
+   "note": "タカギ ヤエコ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070A9C",
+   "template": "070A9C",
+   "style": "bubble",
+   "source": "ポンですわ!",
+   "ko": "퐁이랍니다!",
+   "state": "needs_review",
+   "note": "タカギ ヤエコ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070AAC",
+   "template": "070AAC",
+   "style": "bubble",
+   "source": "チーですわ!",
+   "ko": "치랍니다!",
+   "state": "needs_review",
+   "note": "タカギ ヤエコ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070ABC",
+   "template": "070ABC",
+   "style": "bubble",
+   "source": "人妻リーチ\nですわ!",
+   "ko": "유부녀 리치\n랍니다!",
+   "state": "needs_review",
+   "note": "タカギ ヤエコ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070ACC",
+   "template": "070ACC",
+   "style": "bubble",
+   "source": "ツモですわ!",
+   "ko": "쯔모랍니다!",
+   "state": "needs_review",
+   "note": "タカギ ヤエコ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070ADC",
+   "template": "070ADC",
+   "style": "bubble",
+   "source": "ロンですわ!",
+   "ko": "론이랍니다!",
+   "state": "needs_review",
+   "note": "タカギ ヤエコ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070AEC",
+   "template": "070AEC",
+   "style": "bubble",
+   "source": "カン!",
+   "ko": "깡!",
+   "state": "needs_review",
+   "note": "サンノー ユリカ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070AFC",
+   "template": "070AFC",
+   "style": "bubble",
+   "source": "ポン!",
+   "ko": "퐁!",
+   "state": "needs_review",
+   "note": "サンノー ユリカ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070B0C",
+   "template": "070B0C",
+   "style": "bubble",
+   "source": "チー!",
+   "ko": "치!",
+   "state": "needs_review",
+   "note": "サンノー ユリカ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070B1C",
+   "template": "070B1C",
+   "style": "bubble",
+   "source": "いくよ!\nリッチなリーチ!!",
+   "ko": "간다!\n리치한 리치!!",
+   "state": "needs_review",
+   "note": "サンノー ユリカ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070B2C",
+   "template": "070B2C",
+   "style": "bubble",
+   "source": "ツモ!",
+   "ko": "쯔모!",
+   "state": "needs_review",
+   "note": "サンノー ユリカ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070B3C",
+   "template": "070B3C",
+   "style": "bubble",
+   "source": "ロン!",
+   "ko": "론!",
+   "state": "needs_review",
+   "note": "サンノー ユリカ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070B4C",
+   "template": "070B4C",
+   "style": "bubble",
+   "source": "カン!",
+   "ko": "깡!",
+   "state": "needs_review",
+   "note": "ペンギン虐待女 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070B5C",
+   "template": "070B5C",
+   "style": "bubble",
+   "source": "ポン!",
+   "ko": "퐁!",
+   "state": "needs_review",
+   "note": "ペンギン虐待女 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070B6C",
+   "template": "070B6C",
+   "style": "bubble",
+   "source": "チー!",
+   "ko": "치!",
+   "state": "needs_review",
+   "note": "ペンギン虐待女 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070B7C",
+   "template": "070B7C",
+   "style": "bubble",
+   "source": "ペンギン\n虐待リーチ!!",
+   "ko": "펭귄\n학대 리치!!",
+   "state": "needs_review",
+   "note": "ペンギン虐待女 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070B8C",
+   "template": "070B8C",
+   "style": "bubble",
+   "source": "ツモ!",
+   "ko": "쯔모!",
+   "state": "needs_review",
+   "note": "ペンギン虐待女 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070B9C",
+   "template": "070B9C",
+   "style": "bubble",
+   "source": "ロン!",
+   "ko": "론!",
+   "state": "needs_review",
+   "note": "ペンギン虐待女 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070BAC",
+   "template": "070BAC",
+   "style": "bubble",
+   "source": "カンデス!",
+   "ko": "깡입니다!",
+   "state": "needs_review",
+   "note": "Ｍ－１号 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070BBC",
+   "template": "070BBC",
+   "style": "bubble",
+   "source": "ポンデス!",
+   "ko": "퐁입니다!",
+   "state": "needs_review",
+   "note": "Ｍ－１号 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070BCC",
+   "template": "070BCC",
+   "style": "bubble",
+   "source": "チーデス!",
+   "ko": "치입니다!",
+   "state": "needs_review",
+   "note": "Ｍ－１号 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070BDC",
+   "template": "070BDC",
+   "style": "bubble",
+   "source": "電気満タン、\nメカニカル・リーチ!",
+   "ko": "전기 만땅,\n메카니컬 리치!",
+   "state": "needs_review",
+   "note": "Ｍ－１号 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070BEC",
+   "template": "070BEC",
+   "style": "bubble",
+   "source": "ツモデス!",
+   "ko": "쯔모입니다!",
+   "state": "needs_review",
+   "note": "Ｍ－１号 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070BFC",
+   "template": "070BFC",
+   "style": "bubble",
+   "source": "ロンデス!",
+   "ko": "론입니다!",
+   "state": "needs_review",
+   "note": "Ｍ－１号 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070C0C",
+   "template": "070C0C",
+   "style": "bubble",
+   "source": "カンかな?",
+   "ko": "깡일까요?",
+   "state": "needs_review",
+   "note": "ノロタ ノロミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070C1C",
+   "template": "070C1C",
+   "style": "bubble",
+   "source": "ポンかな?",
+   "ko": "퐁일까요?",
+   "state": "needs_review",
+   "note": "ノロタ ノロミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070C2C",
+   "template": "070C2C",
+   "style": "bubble",
+   "source": "チーかな?",
+   "ko": "치일까요?",
+   "state": "needs_review",
+   "note": "ノロタ ノロミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070C3C",
+   "template": "070C3C",
+   "style": "bubble",
+   "source": "必殺!\nボヘミアン・リーチ!!",
+   "ko": "필살!\n보헤미안 리치!!",
+   "state": "needs_review",
+   "note": "ノロタ ノロミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070C4C",
+   "template": "070C4C",
+   "style": "bubble",
+   "source": "ツモかな?",
+   "ko": "쯔모일까요?",
+   "state": "needs_review",
+   "note": "ノロタ ノロミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070C5C",
+   "template": "070C5C",
+   "style": "bubble",
+   "source": "ロンだね!",
+   "ko": "론이네요!",
+   "state": "needs_review",
+   "note": "ノロタ ノロミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070C6C",
+   "template": "070C6C",
+   "style": "bubble",
+   "source": "カン!",
+   "ko": "깡!",
+   "state": "needs_review",
+   "note": "フジクラ マコト 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070C7C",
+   "template": "070C7C",
+   "style": "bubble",
+   "source": "ポン!",
+   "ko": "퐁!",
+   "state": "needs_review",
+   "note": "フジクラ マコト 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070C8C",
+   "template": "070C8C",
+   "style": "bubble",
+   "source": "チー!",
+   "ko": "치!",
+   "state": "needs_review",
+   "note": "フジクラ マコト 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070C9C",
+   "template": "070C9C",
+   "style": "bubble",
+   "source": "そぉ～れ!\n時間差リーチ!",
+   "ko": "받아라아!\n시간차 리치!",
+   "state": "needs_review",
+   "note": "フジクラ マコト 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070CAC",
+   "template": "070CAC",
+   "style": "bubble",
+   "source": "ツモぉ!!",
+   "ko": "쯔모오!!",
+   "state": "needs_review",
+   "note": "フジクラ マコト 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070CBC",
+   "template": "070CBC",
+   "style": "bubble",
+   "source": "ロォン!!",
+   "ko": "로오온!!",
+   "state": "needs_review",
+   "note": "フジクラ マコト 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070CCC",
+   "template": "070CCC",
+   "style": "bubble",
+   "source": "カンだよ!",
+   "ko": "깡이야!",
+   "state": "needs_review",
+   "note": "メア 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070CDC",
+   "template": "070CDC",
+   "style": "bubble",
+   "source": "ポンだよ!",
+   "ko": "퐁이야!",
+   "state": "needs_review",
+   "note": "メア 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070CEC",
+   "template": "070CEC",
+   "style": "bubble",
+   "source": "チーだよ!",
+   "ko": "치야!",
+   "state": "needs_review",
+   "note": "メア 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070CFC",
+   "template": "070CFC",
+   "style": "bubble",
+   "source": "きたれ!\nデビル・リーチ!!",
+   "ko": "오너라!\n데빌 리치!!",
+   "state": "needs_review",
+   "note": "メア 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070D0C",
+   "template": "070D0C",
+   "style": "bubble",
+   "source": "ツモだね!",
+   "ko": "쯔모네!",
+   "state": "needs_review",
+   "note": "メア 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070D1C",
+   "template": "070D1C",
+   "style": "bubble",
+   "source": "ロンだよ～!",
+   "ko": "론이야아!",
+   "state": "needs_review",
+   "note": "メア 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070D2C",
+   "template": "070D2C",
+   "style": "bubble",
+   "source": "カンよ!",
+   "ko": "깡이야!",
+   "state": "needs_review",
+   "note": "ヨシムラ ミサ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070D3C",
+   "template": "070D3C",
+   "style": "bubble",
+   "source": "ポンよ!",
+   "ko": "퐁이야!",
+   "state": "needs_review",
+   "note": "ヨシムラ ミサ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070D4C",
+   "template": "070D4C",
+   "style": "bubble",
+   "source": "チーよ!",
+   "ko": "치야!",
+   "state": "needs_review",
+   "note": "ヨシムラ ミサ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070D5C",
+   "template": "070D5C",
+   "style": "bubble",
+   "source": "覚悟はいい?\n快楽天リーチ!!",
+   "ko": "각오는 됐어?\n쾌락천 리치!!",
+   "state": "needs_review",
+   "note": "ヨシムラ ミサ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070D6C",
+   "template": "070D6C",
+   "style": "bubble",
+   "source": "ツモ!",
+   "ko": "쯔모!",
+   "state": "needs_review",
+   "note": "ヨシムラ ミサ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070D7C",
+   "template": "070D7C",
+   "style": "bubble",
+   "source": "ロン!",
+   "ko": "론!",
+   "state": "needs_review",
+   "note": "ヨシムラ ミサ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070D8C",
+   "template": "070D8C",
+   "style": "bubble",
+   "source": "カンなり!",
+   "ko": "깡이오!",
+   "state": "needs_review",
+   "note": "カイン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070D9C",
+   "template": "070D9C",
+   "style": "bubble",
+   "source": "ポンなり!",
+   "ko": "퐁이오!",
+   "state": "needs_review",
+   "note": "カイン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070DAC",
+   "template": "070DAC",
+   "style": "bubble",
+   "source": "チーなり!",
+   "ko": "치오!",
+   "state": "needs_review",
+   "note": "カイン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070DBC",
+   "template": "070DBC",
+   "style": "bubble",
+   "source": "サムライ\nリィーチ!!",
+   "ko": "사무라이\n리이치!!",
+   "state": "needs_review",
+   "note": "カイン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070DCC",
+   "template": "070DCC",
+   "style": "bubble",
+   "source": "ツモでゴザる!!",
+   "ko": "쯔모로소이다!!",
+   "state": "needs_review",
+   "note": "カイン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070DDC",
+   "template": "070DDC",
+   "style": "bubble",
+   "source": "ロンでゴザる!!",
+   "ko": "론이로소이다!!",
+   "state": "needs_review",
+   "note": "カイン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070DEC",
+   "template": "070DEC",
+   "style": "bubble",
+   "source": "カン!",
+   "ko": "깡!",
+   "state": "needs_review",
+   "note": "コヨミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070DFC",
+   "template": "070DFC",
+   "style": "bubble",
+   "source": "ポン!",
+   "ko": "퐁!",
+   "state": "needs_review",
+   "note": "コヨミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070E0C",
+   "template": "070E0C",
+   "style": "bubble",
+   "source": "チー!",
+   "ko": "치!",
+   "state": "needs_review",
+   "note": "コヨミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070E1C",
+   "template": "070E1C",
+   "style": "bubble",
+   "source": "復活!\nゴッド・リーチ!!",
+   "ko": "부활!\n갓 리치!!",
+   "state": "needs_review",
+   "note": "コヨミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070E2C",
+   "template": "070E2C",
+   "style": "bubble",
+   "source": "ツモ!",
+   "ko": "쯔모!",
+   "state": "needs_review",
+   "note": "コヨミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070E3C",
+   "template": "070E3C",
+   "style": "bubble",
+   "source": "ロンっ!!",
+   "ko": "론!!",
+   "state": "needs_review",
+   "note": "コヨミ 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070E4C",
+   "template": "070E4C",
+   "style": "bubble",
+   "source": "カンね!",
+   "ko": "깡이네!",
+   "state": "needs_review",
+   "note": "ミリオン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070E5C",
+   "template": "070E5C",
+   "style": "bubble",
+   "source": "ポンね!",
+   "ko": "퐁이네!",
+   "state": "needs_review",
+   "note": "ミリオン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070E6C",
+   "template": "070E6C",
+   "style": "bubble",
+   "source": "チーね!",
+   "ko": "치네!",
+   "state": "needs_review",
+   "note": "ミリオン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070E7C",
+   "template": "070E7C",
+   "style": "bubble",
+   "source": "きらめき、\nマジカル・リーチ!!",
+   "ko": "반짝반짝,\n매지컬 리치!!",
+   "state": "needs_review",
+   "note": "ミリオン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070E8C",
+   "template": "070E8C",
+   "style": "bubble",
+   "source": "ツモだもんね!",
+   "ko": "쯔모라구!",
+   "state": "needs_review",
+   "note": "ミリオン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070E9C",
+   "template": "070E9C",
+   "style": "bubble",
+   "source": "ロンっ!!",
+   "ko": "론!!",
+   "state": "needs_review",
+   "note": "ミリオン 말풍선; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070604",
+   "template": "070604",
+   "style": "outline",
+   "source": "このあとも、\n素敵なお姉様が\n待ってるっス!",
+   "ko": "이 뒤에도\n멋진 누님들이\n기다리고 있슴다!",
+   "state": "needs_review",
+   "note": "컨티뉴 화면 도우미 문구; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070434",
+   "template": "070434",
+   "style": "outline",
+   "source": "コインを入れてください!",
+   "ko": "코인을 넣어 주세요!",
+   "state": "needs_review",
+   "note": "코인 문구 (대); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07042C",
+   "template": "07042C",
+   "style": "outline_thin",
+   "source": "コインを入れて下さい!",
+   "ko": "코인을 넣어 주세요!",
+   "state": "needs_review",
+   "note": "타이틀 로고 아래 코인 문구; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07043C",
+   "template": "07043C+070444+07044C",
+   "style": "outline_coin",
+   "source": "コインを\n入れて下さい!",
+   "ko": "코인을\n넣어 주세요!",
+   "state": "needs_review",
+   "note": "대국 중 코인 문구 (3조각); 원문은 화면에서 옮겨 적음"
+  }
+ ]
+}
