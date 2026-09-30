@@ -26,9 +26,87 @@ TEXT_FONT = "/usr/share/fonts/truetype/nanum/NanumGothicExtraBold.ttf"
 MYEONGJO_XB = "/usr/share/fonts/truetype/nanum/NanumMyeongjoExtraBold.ttf"
 MODE_LABEL = {"type": "photo_label", "palette_rom": 0x6A190, "detect": "dark_halo", "halo_px": 4,
               "fill": (0, 0, 0), "outline": (255, 255, 255), "outline_px": 3}   # mode select photos, bank 8
+# Ending credits (option A, user decision 2026-09-30): Japanese names -> Hangul readings (card romaji where present,
+# otherwise common readings — PROVISIONAL), Latin names kept, role titles translated.
 PLATE_LABEL = {"type": "photo_label", "palette_rom": 0x69D90, "detect": "solid", "bg": (0, 0, 0),
                "fill": (255, 255, 255), "outline": None, "outline_px": 0, "squeeze": True}   # opponent select name plates, bank 8
 GRAPHICS: list[dict] = [
+    {"id": "credit_direction", "type": "credit_page", "sheet": {"tiles": (0x00737, 0x007C3), "w": 10, "h": 14}, "palette_rom": 0x68D90,
+     "items": [
+        {"box": (146, 10, 252, 36), "lines": ["제작/감독"], "align": "left", "size": 22},
+        {"box": (204, 37, 306, 59), "lines": ["나카무라 신스케"], "align": "left", "size": 22},
+        {"box": (146, 61, 252, 86), "lines": ["기획/각본"], "align": "left", "size": 22},
+        {"box": (204, 87, 306, 109), "lines": ["야마다 케이시"], "align": "left", "size": 22},
+        {"box": (146, 110, 262, 136), "lines": ["프로그램"], "align": "left", "size": 22},
+        {"box": (204, 137, 306, 160), "lines": ["사이토 시오리"], "align": "left", "size": 22},
+        {"box": (146, 161, 262, 186), "lines": ["디자인/연출"], "align": "left", "size": 22},
+        {"box": (204, 187, 306, 210), "lines": ["오가와 효에"], "align": "left", "size": 22}]},
+    {"id": "credit_design", "type": "credit_page", "sheet": {"tiles": (0x0084F, 0x008DB), "w": 10, "h": 14}, "palette_rom": 0x68D90,
+     "items": [
+        {"box": (103, 9, 192, 35), "lines": ["디자인"], "align": "left", "size": 22},
+        {"box": (13, 35, 104, 58), "lines": ["츠카코시 요코"], "align": "left", "size": 22},
+        {"box": (13, 62, 104, 86), "lines": ["타니구치 에미"], "align": "left", "size": 22},
+        {"box": (13, 90, 104, 114), "lines": ["후지타 케이조"], "align": "left", "size": 22},
+        {"box": (13, 118, 104, 142), "lines": ["이와부치 요스케"], "align": "left", "size": 22},
+        {"box": (106, 73, 193, 97), "lines": ["카지카와 마사시"], "align": "left", "size": 22},
+        {"box": (106, 101, 193, 125), "lines": ["마에다 야스츠구"], "align": "left", "size": 22},
+        {"box": (106, 129, 193, 153), "lines": ["사카모토 사치코"], "align": "left", "size": 22},
+        {"box": (106, 157, 193, 181), "lines": ["노하라 신지"], "align": "left", "size": 22},
+        {"box": (106, 185, 193, 209), "lines": ["코타니 토모유키"], "align": "left", "size": 22}]},
+    {"id": "credit_chardesign", "type": "credit_page", "sheet": {"tiles": (0x00967, 0x009F3), "w": 10, "h": 14}, "palette_rom": 0x68D90,
+     "items": [
+        {"box": (54, 6, 260, 31), "lines": ["캐릭터 디자인"], "align": "center", "size": 22},
+        {"box": (15, 44, 142, 67), "lines": ["이노우에 타쿠야"], "align": "right", "size": 22},
+        {"box": (15, 96, 142, 119), "lines": ["쿠가야마 리카코"], "align": "right", "size": 22},
+        {"box": (15, 122, 142, 145), "lines": ["카토 레이지로"], "align": "right", "size": 22},
+        {"box": (15, 148, 142, 171), "lines": ["카루마 타츠로"], "align": "right", "size": 22},
+        {"box": (15, 173, 142, 197), "lines": ["코토부키 카즈키"], "align": "right", "size": 22},
+        {"box": (198, 70, 306, 93), "lines": ["도만 세이만"], "align": "left", "size": 22},
+        {"box": (198, 96, 306, 119), "lines": ["토키사카 무기"], "align": "left", "size": 22},
+        {"box": (198, 122, 306, 145), "lines": ["후미즈키 코우"], "align": "left", "size": 22},
+        {"box": (198, 148, 306, 171), "lines": ["모리나가 밀크"], "align": "left", "size": 22},
+        {"box": (198, 174, 306, 197), "lines": ["요키히"], "align": "left", "size": 22}]},
+    {"id": "credit_guest", "type": "credit_page", "sheet": {"tiles": (0x00A7F, 0x00B0B), "w": 10, "h": 14}, "palette_rom": 0x68D90,
+     "items": [
+        {"box": (3, 9, 148, 38), "lines": ["게스트 캐릭터 디자인"], "align": "left", "size": 20},
+        {"box": (200, 14, 300, 39), "lines": ["촬영 협력"], "align": "left", "size": 22},
+        {"box": (40, 83, 131, 106), "lines": ["츠카사 준"], "align": "right", "size": 22},
+        {"box": (20, 111, 131, 135), "lines": ["나카무라 히로후미"], "align": "right", "size": 22},
+        {"box": (15, 139, 125, 163), "lines": ["무라타 렌지"], "align": "right", "size": 22},
+        {"box": (200, 55, 300, 78), "lines": ["유사 신이치"], "align": "left", "size": 22},
+        {"box": (196, 99, 310, 119), "lines": ["이가라시 노리유키"], "align": "left", "size": 20},
+        {"box": (196, 120, 310, 134), "lines": ["(작 아메리카)"], "align": "right", "size": 13},
+        {"box": (196, 149, 310, 169), "lines": ["코타니 토모유키"], "align": "left", "size": 20},
+        {"box": (196, 170, 310, 185), "lines": ["(작 재팬)"], "align": "right", "size": 13}]},
+    {"id": "credit_voice", "type": "credit_page", "sheet": {"tiles": (0x00B97, 0x00C23), "w": 10, "h": 14}, "palette_rom": 0x68D90,
+     "items": [
+        {"box": (112, 18, 202, 43), "lines": ["목소리 출연"], "align": "center", "size": 22},
+        {"box": (13, 56, 126, 81), "lines": ["아사미 준코"], "align": "right", "size": 22},
+        {"box": (13, 84, 126, 108), "lines": ["이마하시 카츠요"], "align": "right", "size": 22},
+        {"box": (13, 112, 126, 136), "lines": ["오오타니 이쿠에"], "align": "right", "size": 22},
+        {"box": (13, 139, 126, 164), "lines": ["오리카사 아이"], "align": "right", "size": 22},
+        {"box": (13, 168, 126, 193), "lines": ["카츠키 마사코"], "align": "right", "size": 22},
+        {"box": (188, 56, 306, 81), "lines": ["코오로기 사토미"], "align": "left", "size": 22},
+        {"box": (188, 84, 306, 108), "lines": ["타카다 유미"], "align": "left", "size": 22},
+        {"box": (188, 112, 306, 136), "lines": ["타나카 아츠코"], "align": "left", "size": 22},
+        {"box": (188, 139, 306, 164), "lines": ["야지마 아키코"], "align": "left", "size": 22},
+        {"box": (188, 168, 306, 193), "lines": ["와카모토 노리오"], "align": "left", "size": 22}]},
+    {"id": "credit_final", "type": "credit_page", "sheet": {"tiles": (0x00CAF, 0x00D3B), "w": 10, "h": 14}, "palette_rom": 0x68D90,
+     "items": [
+        {"box": (158, 44, 300, 69), "lines": ["협력"], "align": "left", "size": 22},
+        {"box": (158, 73, 306, 99), "lines": ["와니 매거진사"], "align": "left", "size": 22},
+        {"box": (158, 114, 300, 139), "lines": ["제작/저작"], "align": "left", "size": 22},
+        {"box": (158, 144, 300, 169), "lines": ["1998 사이쿄"], "align": "left", "size": 22}]},
+    {"id": "namecard_00", "type": "name_card", "template": "074A7C+074A84+074A8C", "palette_rom": 0x6AD90, "cut": 43, "lines": ["후미즈키 코우"]},
+    {"id": "namecard_01", "type": "name_card", "template": "074A94+074A9C+074AA4", "palette_rom": 0x6AD90, "cut": 43, "lines": ["토키사카 무기"]},
+    {"id": "namecard_02", "type": "name_card", "template": "074AAC+074AB4+074ABC", "palette_rom": 0x6AD90, "cut": 43, "lines": ["카루마 타츠로"]},
+    {"id": "namecard_03", "type": "name_card", "template": "074AC4+074ACC+074AD4", "palette_rom": 0x6AD90, "cut": 43, "lines": ["모리나가 밀크"]},
+    {"id": "namecard_04", "type": "name_card", "template": "074ADC+074AE4+074AEC", "palette_rom": 0x6AD90, "cut": 43, "lines": ["이노우에 타쿠야"]},
+    {"id": "namecard_05", "type": "name_card", "template": "074AF4+074AFC+074B04", "palette_rom": 0x6AD90, "cut": 43, "lines": ["쿠가야마 리카코"]},
+    {"id": "namecard_07", "type": "name_card", "template": "074B24+074B2C+074B34", "palette_rom": 0x6AD90, "cut": 43, "lines": ["도만 세이만"]},
+    {"id": "namecard_08", "type": "name_card", "template": "074B3C+074B44+074B4C", "palette_rom": 0x6AD90, "cut": 43, "lines": ["카토 레이지로"]},
+    {"id": "namecard_09", "type": "name_card", "template": "074B54+074B5C+074B64", "palette_rom": 0x6AD90, "cut": 43, "lines": ["코토부키 카즈키"]},
+    {"id": "namecard_11", "type": "name_card", "template": "074B84+074B8C+074B94", "palette_rom": 0x6AD90, "cut": 43, "lines": ["요키히"]},
     {"id": "mode_versus", "sheet": (0x148B0, 8, 9), "band": (4, 106, 123, 143), "lines": ["통신 대전"], **MODE_LABEL},
     {"id": "mode_versus_lit", "sheet": (0x14820, 8, 9), "band": (4, 106, 123, 143), "lines": ["통신 대전"], **MODE_LABEL},
     {"id": "mode_versus_f3", "sheet": (0x14868, 8, 9), "band": (4, 106, 123, 143), "lines": ["통신 대전"], **MODE_LABEL},
@@ -413,6 +491,82 @@ def photo_label_writes(plan, files, image, spec) -> dict:
     return {spec["id"]: {"tiles_written": len(written), "_tiles": written}}
 
 
+
+def _tile_changes(plan, sheet, rows, new, writer) -> dict:
+    old_t, new_t = sheet.encode(rows), sheet.encode(new)
+    written = {}
+    for tn, t in new_t.items():
+        if t != old_t[tn]:
+            add_mapped(plan, f"{writer}:{tn:05X}", layout.gfx_offset_to_file, tn * 256, old_t[tn], t)
+            written[tn] = t
+    return written
+
+
+def name_card_writes(plan, files, image, spec) -> dict:
+    """Attract name card: redraw the big name above `cut`, keep the romaji rows below it untouched."""
+    sheet, _ = template_canvas(image, spec["template"])
+    rows = sheet.read(lambda off, n: region_read(files, off, n))
+    cut = spec["cut"]
+    if any(rows[y][x] is None for y in range(cut) for x in range(sheet.width)):
+        raise RuntimeError(f"{spec['id']}: name area not fully covered by the card parts")
+    used = sorted({v for r in rows for v in r if v})
+    pal = graphics.rom_palette(image, spec["palette_rom"], used)
+    art = None
+    for size in range(40, 13, -1):
+        try:
+            art = graphics.text_art(spec["lines"], TEXT_FONT, size, sheet.width, cut, (255, 255, 255), (0, 0, 0), 2,
+                                    antialias=True)
+            break
+        except graphics.GraphicsError:
+            continue
+    if art is None:
+        raise graphics.GraphicsError(f"{spec['id']}: name does not fit")
+    new = [list(r) for r in rows]
+    cache: dict[tuple, int] = {}
+    for y in range(cut):
+        for x in range(sheet.width):
+            r, g, b, a = art.getpixel((x, y))
+            new[y][x] = cache.setdefault((r, g, b), graphics.nearest(pal, (r, g, b))) if a >= 128 else 0
+    w = _tile_changes(plan, sheet, rows, new, f"namecard:{spec['id']}")
+    return {spec["id"]: {"tiles_written": len(w), "_tiles": w}}
+
+
+def credit_page_writes(plan, files, image, spec) -> dict:
+    """Full-screen credit page: each item box must hold only achromatic text on black; it is cleared and redrawn."""
+    sheet = graphics.SpriteSheet(**spec["sheet"])
+    rows = sheet.read(lambda off, n: region_read(files, off, n))
+    used = sorted({v for r in rows for v in r})
+    pal = graphics.rom_palette(image, spec["palette_rom"], used)
+    black = min(used, key=lambda i: sum(pal[i]))
+    new = [list(r) for r in rows]
+    cache: dict[tuple, int] = {}
+    for item in spec["items"]:
+        x0, y0, x1, y1 = item["box"]
+        for y in range(y0, y1 + 1):
+            for x in range(x0, x1 + 1):
+                c = pal[rows[y][x]]
+                if max(c) - min(c) > 40:
+                    raise RuntimeError(f"{spec['id']}: non-text pixel in box {item['box']} at ({x},{y})")
+                new[y][x] = black
+        bw, bh = x1 - x0 + 1, y1 - y0 + 1
+        art = graphics.squeezed_text_art(item["lines"], item.get("font", TEXT_FONT), range(item.get("size", 24), 7, -1),
+                                         bw, bh, (255, 255, 255), antialias=True, min_ratio=0.6)
+        box = art.getchannel("A").getbbox()
+        if box and item.get("align", "center") != "center":   # squeezed art is centred; shift to the requested edge
+            dx = -box[0] if item["align"] == "left" else bw - box[2]
+            moved = Image.new("RGBA", (bw, bh), (0, 0, 0, 0))
+            moved.paste(art, (dx, 0))
+            art = moved
+        for y in range(bh):
+            for x in range(bw):
+                r, g, b, a = art.getpixel((x, y))
+                if a:
+                    k = tuple(round(c * a / 255 + f * (255 - a) / 255) for c, f in zip((r, g, b), pal[black]))
+                    new[y0 + y][x0 + x] = cache.setdefault(k, graphics.nearest(pal, k))
+    w = _tile_changes(plan, sheet, rows, new, f"credit:{spec['id']}")
+    return {spec["id"]: {"tiles_written": len(w), "_tiles": w}}
+
+
 def card_writes(plan, files, image, spec) -> dict:
     """Name card: sharp Korean card drawn at the last frame's size, blurred for the earlier frames."""
     reader = lambda off, n: region_read(files, off, n)
@@ -456,6 +610,12 @@ def graphics_writes(plan, files, image, assets_dir) -> dict:
     for spec in GRAPHICS:
         if spec["type"] == "card":
             report.update(card_writes(plan, files, image, spec))
+            continue
+        if spec["type"] == "name_card":
+            report.update(name_card_writes(plan, files, image, spec))
+            continue
+        if spec["type"] == "credit_page":
+            report.update(credit_page_writes(plan, files, image, spec))
             continue
         if spec["type"] == "photo_label":
             report.update(photo_label_writes(plan, files, image, spec))

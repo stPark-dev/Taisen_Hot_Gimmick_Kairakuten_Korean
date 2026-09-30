@@ -433,3 +433,90 @@ def test_photo_label_solid_band_repaints_only_the_band(tmp_path, monkeypatch):
     assert all(out[y][x] == 3 for y in range(32) for x in range(64) if not (6 <= x and y >= 16))   # outside band kept
     band = [out[y][x] for y in range(16, 32) for x in range(6, 64)]
     assert set(band) <= {0, 1, 2} and band.count(2) < 200    # black band + new white text only
+
+
+def _write_tiles(d, prof, tiles_rows, sheet, extra=None):
+    data = {n: bytearray((d / n).read_bytes()) for n in prof}
+    for tn, tile in sheet.encode(tiles_rows).items():
+        for i, v in enumerate(tile):
+            f, o = layout.gfx_offset_to_file(tn * 256 + i)
+            data[f][o] = v
+    if extra:
+        extra(data)
+    for n, b in data.items():
+        (d / n).write_bytes(bytes(b))
+        prof[n] = (len(b), hashlib.sha1(b).hexdigest())
+
+
+def _gray_palette(data, addr):
+    for i in range(256):
+        _cpu_put(data["1.u22"], data["2.u23"], addr + i * 4, bytes((i, i, i)) + b"\x00")
+
+
+def test_name_card_keeps_romaji_rows(tmp_path, monkeypatch):
+    import zipfile
+    from hgkairak import graphics
+    d, prof = make_set(tmp_path)
+    sheet = graphics.SpriteSheet((0x9000,), 4, 4)
+    rows = [[0] * 64 for _ in range(64)]
+    for y in range(8, 36):
+        for x in range(4, 60):
+            rows[y][x] = 200                     # old big name
+    for y in range(46, 54):
+        for x in range(10, 50):
+            rows[y][x] = 255                     # romaji
+    geo = lambda x: (3 << 28) | (1 << 27) | (3 << 12) | x
+
+    def extra(data):
+        _gray_palette(data, 0x60000)
+        _cpu_put(data["1.u22"], data["2.u23"], 0x68004, struct.pack(">II", geo(0), (0x18 << 24) | 0x9000))
+    _write_tiles(d, prof, rows, sheet, extra)
+    monkeypatch.setattr(source, "PROFILE", prof)
+    monkeypatch.setattr(build, "TITLE_STRIP", False)
+    monkeypatch.setattr(build, "TEMPLATE_AREA", (0x60000, 0x70000))
+    spec = {"id": "card", "type": "name_card", "template": "068004", "palette_rom": 0x60000, "cut": 43, "lines": ["가나"]}
+    monkeypatch.setattr(build, "GRAPHICS", [spec])
+    table = tmp_path / "t.json"
+    build.extract(d, table)
+    build.build(d, table, tmp_path / "out", NANUM, assets_dir=tmp_path)
+    z = zipfile.ZipFile(tmp_path / "out" / "hgkairak.zip")
+    files = {n: z.read(n) for n in z.namelist()}
+    out = sheet.read(lambda o, n: build.region_read(files, o, n))
+    assert all(out[y][x] == rows[y][x] for y in range(43, 64) for x in range(64))   # romaji untouched
+    assert any(out[y][x] for y in range(43) for x in range(64))                     # new name drawn
+    assert sum(out[y][x] == 200 for y in range(8, 36) for x in range(4, 60)) < 28 * 56 // 2   # old name block gone
+
+
+def test_credit_page_rewrites_text_box_and_refuses_photo(tmp_path, monkeypatch):
+    import zipfile
+    from hgkairak import graphics
+    d, prof = make_set(tmp_path)
+    sheet = graphics.SpriteSheet((0x9000,), 4, 2)
+    rows = [[1] * 64 for _ in range(32)]                 # 1 = black
+    for y in range(4, 12):
+        for x in range(4, 30):
+            rows[y][x] = 2 if (x + y) % 2 else 1           # old white text
+    for y in range(0, 32):
+        for x in range(48, 64):
+            rows[y][x] = 3                                 # photo (colourful)
+
+    def extra(data):
+        for i, rgb in enumerate([(0, 0, 0), (0, 0, 0), (255, 255, 255), (200, 40, 40)] + [(k * 8, k * 8, k * 8) for k in range(4, 32)]):
+            _cpu_put(data["1.u22"], data["2.u23"], 0x60000 + i * 4, bytes(rgb) + b"\x00")
+    _write_tiles(d, prof, rows, sheet, extra)
+    monkeypatch.setattr(source, "PROFILE", prof)
+    monkeypatch.setattr(build, "TITLE_STRIP", False)
+    spec = {"id": "page", "type": "credit_page", "sheet": {"tiles": (0x9000,), "w": 4, "h": 2}, "palette_rom": 0x60000,
+            "items": [{"box": (2, 2, 40, 14), "lines": ["가"], "align": "left"}]}
+    monkeypatch.setattr(build, "GRAPHICS", [spec])
+    table = tmp_path / "t.json"
+    build.extract(d, table)
+    build.build(d, table, tmp_path / "out", NANUM, assets_dir=tmp_path)
+    z = zipfile.ZipFile(tmp_path / "out" / "hgkairak.zip")
+    files = {n: z.read(n) for n in z.namelist()}
+    out = sheet.read(lambda o, n: build.region_read(files, o, n))
+    assert all(out[y][x] == 3 for y in range(32) for x in range(48, 64))            # photo kept
+    assert any(out[y][x] not in (1,) for y in range(2, 15) for x in range(2, 41))    # text drawn
+    spec["items"] = [{"box": (40, 2, 60, 14), "lines": ["가"], "align": "left"}]    # box over the photo
+    with pytest.raises(RuntimeError, match="non-text"):
+        build.build(d, table, tmp_path / "out2", NANUM, assets_dir=tmp_path)
