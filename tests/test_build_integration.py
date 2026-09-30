@@ -396,3 +396,40 @@ def test_template_canvas_rejects_flipped_templates(synthetic_graphics):
     struct.pack_into(">II", img, 0x68004, (1 << 27) | (1 << 12), (6 << 24) | 0x00800000 | 0x1234)
     with pytest.raises(build.TranslationError, match="flip"):
         build.template_canvas(bytes(img), "068004")
+
+
+def test_photo_label_solid_band_repaints_only_the_band(tmp_path, monkeypatch):
+    """solid mode fills the band with the background colour, draws text, and leaves the rest of the sheet alone."""
+    import zipfile
+    from hgkairak import graphics
+    d, prof = make_set(tmp_path)
+    data = {n: bytearray((d / n).read_bytes()) for n in prof}
+    pal_rom, tnum, w, h = 0x60000, 0x9000, 4, 2
+    for i, rgb in enumerate([(0, 0, 0), (5, 5, 5), (250, 250, 250), (0, 140, 60)] + [(i * 8, 90, 90) for i in range(4, 32)]):
+        _cpu_put(data["1.u22"], data["2.u23"], pal_rom + i * 4, bytes(rgb) + b"\x00")
+    rows = [[3] * (w * 16) for _ in range(h * 16)]
+    for y in range(16, 32):
+        for x in range(6, 64):
+            rows[y][x] = 2 if (x + y) % 3 == 0 else 1     # old white text on black band
+    sheet = graphics.SpriteSheet((tnum,), w, h)
+    for tn, tile in sheet.encode(rows).items():
+        for i, v in enumerate(tile):
+            f, o = layout.gfx_offset_to_file(tn * 256 + i)
+            data[f][o] = v
+    for n, b in data.items():
+        (d / n).write_bytes(bytes(b))
+        prof[n] = (len(b), hashlib.sha1(b).hexdigest())
+    monkeypatch.setattr(source, "PROFILE", prof)
+    monkeypatch.setattr(build, "TITLE_STRIP", False)
+    spec = {"id": "plate", "type": "photo_label", "sheet": (tnum, w, h), "palette_rom": pal_rom, "band": (6, 16, 63, 31),
+            "lines": ["가"], "detect": "solid", "bg": (0, 0, 0), "fill": (255, 255, 255), "outline": None, "outline_px": 0}
+    monkeypatch.setattr(build, "GRAPHICS", [spec])
+    table = tmp_path / "t.json"
+    build.extract(d, table)
+    build.build(d, table, tmp_path / "out", NANUM, assets_dir=tmp_path)
+    z = zipfile.ZipFile(tmp_path / "out" / "hgkairak.zip")
+    files = {n: z.read(n) for n in z.namelist()}
+    out = sheet.read(lambda o, n: build.region_read(files, o, n))
+    assert all(out[y][x] == 3 for y in range(32) for x in range(64) if not (6 <= x and y >= 16))   # outside band kept
+    band = [out[y][x] for y in range(16, 32) for x in range(6, 64)]
+    assert set(band) <= {0, 1, 2} and band.count(2) < 200    # black band + new white text only

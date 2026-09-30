@@ -967,7 +967,7 @@
   {
    "id": "G070604",
    "template": "070604",
-   "style": "outline",
+   "style": "outline_left",
    "source": "このあとも、\n素敵なお姉様が\n待ってるっス!",
    "ko": "이 뒤에도\n멋진 누님들이\n기다리고 있슴다!",
    "state": "needs_review",
@@ -999,6 +999,609 @@
    "ko": "코인을\n넣어 주세요!",
    "state": "needs_review",
    "note": "대국 중 코인 문구 (3조각); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0705F4",
+   "template": "0705F4",
+   "style": "outline_left",
+   "source": "おやびん\nくやしいっス!",
+   "ko": "두목\n분함다!",
+   "state": "needs_review",
+   "note": "컨티뉴 도우미; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0705FC",
+   "template": "0705FC",
+   "style": "outline_left",
+   "source": "きっと\n出口は近いっス!",
+   "ko": "분명\n출구가 가까움다!",
+   "state": "needs_review",
+   "note": "컨티뉴 도우미; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07060C",
+   "template": "07060C",
+   "style": "outline_left",
+   "source": "ここでやめたら\n男がすたるっスよ!",
+   "ko": "여기서 관두면\n남자 망신임다!",
+   "state": "needs_review",
+   "note": "컨티뉴 도우미; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070614",
+   "template": "070614",
+   "style": "outline_left",
+   "source": "おやび～ん!",
+   "ko": "두모오옥!",
+   "state": "needs_review",
+   "note": "컨티뉴 도우미; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07061C",
+   "template": "07061C",
+   "style": "outline_left",
+   "source": "おやび～ん!!",
+   "ko": "두모오옥!!",
+   "state": "needs_review",
+   "note": "게임 오버 도우미; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070624",
+   "template": "070624+07062C",
+   "style": "outline_left",
+   "source": "その程度じゃ\nなんにも教えてあげられないわ!",
+   "ko": "그 정도로는\n아무것도 못 가르쳐 주겠어!",
+   "state": "needs_review",
+   "note": "컨티뉴 쿠로다 미키; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070634",
+   "template": "070634+07063C",
+   "style": "outline_left",
+   "source": "やめちゃうの?\n出口は、すぐそこだよ?",
+   "ko": "그만두는 거야?\n출구는 바로 저기인데?",
+   "state": "needs_review",
+   "note": "컨티뉴 메루루; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070644",
+   "template": "070644+07064C",
+   "style": "outline_left",
+   "source": "あれぇ?\nもう、おしまいなの?",
+   "ko": "어라?\n벌써 끝이야?",
+   "state": "needs_review",
+   "note": "컨티뉴 코이누바라 마유; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070654",
+   "template": "070654+07065C",
+   "style": "outline_left",
+   "source": "おやまぁ、もう おしまい?\nそこに出口があるのに!",
+   "ko": "어머나,벌써 끝인가요?\n저기에 출구가 있는데!",
+   "state": "needs_review",
+   "note": "컨티뉴 오스즈; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070664",
+   "template": "070664+07066C",
+   "style": "outline_left",
+   "source": "もうおしまい?\nまだ入り口ですよ!",
+   "ko": "벌써 끝이에요?\n아직 입구일 뿐이에요!",
+   "state": "needs_review",
+   "note": "컨티뉴 타카기 야에코; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070674",
+   "template": "070674+07067C",
+   "style": "outline_left",
+   "source": "ここまで来たのは誉めてあげる。\nでも、もう限界よね!",
+   "ko": "여기까지 온 건 칭찬해 주지.\n하지만 이제 한계겠지!",
+   "state": "needs_review",
+   "note": "컨티뉴 산노 유리카; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070684",
+   "template": "070684",
+   "style": "outline_left",
+   "source": "ペンギンと共に絶滅しろ。",
+   "ko": "펭귄과 함께 멸종해라.",
+   "state": "needs_review",
+   "note": "컨티뉴 펭귄 학대녀; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07068C",
+   "template": "07068C",
+   "style": "outline_left",
+   "source": "もうやめちゃうデスか?\n出口は、すぐそこデス!",
+   "ko": "벌써 그만두는 것입니까?\n출구는 바로 코앞입니다!",
+   "state": "needs_review",
+   "note": "컨티뉴 M-1호; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070694",
+   "template": "070694+07069C",
+   "style": "outline_left",
+   "source": "あれ? まだ旅は\nはじまったばかりですよ?",
+   "ko": "어라? 여행은 아직\n막 시작됐는데요?",
+   "state": "needs_review",
+   "note": "컨티뉴 노로타 노로미; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0706A4",
+   "template": "0706A4+0706AC",
+   "style": "outline_left",
+   "source": "あはは!\nまだ、始まったばかりだよ?",
+   "ko": "아하하!\n이제 막 시작했는데?",
+   "state": "needs_review",
+   "note": "컨티뉴 후지쿠라 마코토; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0706B4",
+   "template": "0706B4+0706BC",
+   "style": "outline_left",
+   "source": "もう、やめちゃうって?\nウソでしょう?",
+   "ko": "벌써 그만둔다고?\n거짓말이지?",
+   "state": "needs_review",
+   "note": "컨티뉴 메아; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0706C4",
+   "template": "0706C4+0706CC",
+   "style": "outline_left",
+   "source": "私の世界からは、\n誰も逃げられないのよ!",
+   "ko": "내 세계에선,\n아무도 도망칠 수 없어!",
+   "state": "needs_review",
+   "note": "컨티뉴 요시무라 미사; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0706D4",
+   "template": "0706D4",
+   "style": "outline_left",
+   "source": "おヌシ、拙者からは絶対\n逃げられんでゴザるよ!",
+   "ko": "그대,소인에게서는 절대\n도망칠 수 없소이다!",
+   "state": "needs_review",
+   "note": "컨티뉴 카인; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0706DC",
+   "template": "0706DC+0706E4",
+   "style": "outline_left",
+   "source": "もう一度挑戦しなさい!\nオトコでしょ?!",
+   "ko": "다시 도전해!\n남자잖아?!",
+   "state": "needs_review",
+   "note": "컨티뉴 코요미; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0706EC",
+   "template": "0706EC",
+   "style": "outline_left",
+   "source": "これで終わりなんて、\n許さないんだからね!",
+   "ko": "이걸로 끝이라니,\n용서 안 할 거니까!",
+   "state": "needs_review",
+   "note": "컨티뉴 밀리언; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0706F4",
+   "template": "0706F4",
+   "style": "outline_left",
+   "source": "コンティニュー\nするんだ!!",
+   "ko": "컨티뉴\n하는 거다!!",
+   "state": "needs_review",
+   "note": "2대 연결 대전 컨티뉴 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0706FC",
+   "template": "0706FC",
+   "style": "outline_left",
+   "source": "頼む!もう一度\nチャンスを!",
+   "ko": "부탁해! 한 번 더\n기회를!",
+   "state": "needs_review",
+   "note": "2대 연결 대전 컨티뉴 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070704",
+   "template": "070704",
+   "style": "outline_left",
+   "source": "日本人の強さを\n見せてくれ!",
+   "ko": "일본인의 강인함을\n보여 줘!",
+   "state": "needs_review",
+   "note": "2대 연결 대전 컨티뉴 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07070C",
+   "template": "07070C",
+   "style": "outline_left",
+   "source": "俺を見捨てたら\n後悔するぜ(俺が)!",
+   "ko": "날 버리면\n후회할 거다(내가)!",
+   "state": "needs_review",
+   "note": "2대 연결 대전 컨티뉴 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070714",
+   "template": "070714",
+   "style": "outline_left",
+   "source": "土下座は\n日本の伝統だ!",
+   "ko": "무릎 꿇고 비는 건\n일본의 전통이다!",
+   "state": "needs_review",
+   "note": "2대 연결 대전 컨티뉴 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07071C",
+   "template": "07071C",
+   "style": "outline_left",
+   "source": "ゲーム\nオーバーだ!",
+   "ko": "게임\n오버다!",
+   "state": "needs_review",
+   "note": "2대 연결 대전 게임 오버 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070EDC",
+   "template": "070EDC",
+   "style": "grade_serif",
+   "source": "満貫",
+   "ko": "만관",
+   "state": "needs_review",
+   "note": "화료 등급; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070EE4",
+   "template": "070EE4",
+   "style": "grade_serif",
+   "source": "ハネ満",
+   "ko": "하네만",
+   "state": "needs_review",
+   "note": "화료 등급; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070EEC",
+   "template": "070EEC",
+   "style": "grade_serif",
+   "source": "倍満",
+   "ko": "배만",
+   "state": "needs_review",
+   "note": "화료 등급; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070EF4",
+   "template": "070EF4",
+   "style": "grade_serif",
+   "source": "三倍満",
+   "ko": "삼배만",
+   "state": "needs_review",
+   "note": "화료 등급; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070EFC",
+   "template": "070EFC",
+   "style": "grade_serif",
+   "source": "役満",
+   "ko": "역만",
+   "state": "needs_review",
+   "note": "화료 등급; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070F04",
+   "template": "070F04",
+   "style": "grade_serif",
+   "source": "ダブル役満",
+   "ko": "더블 역만",
+   "state": "needs_review",
+   "note": "화료 등급; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070F0C",
+   "template": "070F0C",
+   "style": "grade_serif",
+   "source": "トリプル役満",
+   "ko": "트리플 역만",
+   "state": "needs_review",
+   "note": "화료 등급; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070F14",
+   "template": "070F14",
+   "style": "grade_serif",
+   "source": "数え役満",
+   "ko": "누적 역만",
+   "state": "needs_review",
+   "note": "화료 등급; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0710EC",
+   "template": "0710EC",
+   "style": "grade_serif",
+   "source": "天和",
+   "ko": "천화",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0710F4",
+   "template": "0710F4",
+   "style": "grade_serif",
+   "source": "地和",
+   "ko": "지화",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0710FC",
+   "template": "0710FC",
+   "style": "grade_serif",
+   "source": "国士無双",
+   "ko": "국사무쌍",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G071104",
+   "template": "071104",
+   "style": "grade_serif",
+   "source": "大三元",
+   "ko": "대삼원",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07110C",
+   "template": "07110C",
+   "style": "grade_serif",
+   "source": "四暗刻",
+   "ko": "스안커",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G071114",
+   "template": "071114",
+   "style": "grade_serif",
+   "source": "字一色",
+   "ko": "자일색",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07111C",
+   "template": "07111C",
+   "style": "grade_serif",
+   "source": "四喜和",
+   "ko": "사희화",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G071124",
+   "template": "071124",
+   "style": "grade_serif",
+   "source": "九連宝燈",
+   "ko": "구련보등",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07112C",
+   "template": "07112C",
+   "style": "grade_serif",
+   "source": "清老頭",
+   "ko": "청노두",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G071134",
+   "template": "071134",
+   "style": "grade_serif",
+   "source": "四カンツ",
+   "ko": "스깡쯔",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07113C",
+   "template": "07113C",
+   "style": "grade_serif",
+   "source": "緑一色",
+   "ko": "녹일색",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G071144",
+   "template": "071144",
+   "style": "grade_serif",
+   "source": "大車輪",
+   "ko": "대차륜",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07114C",
+   "template": "07114C",
+   "style": "grade_serif",
+   "source": "十三不搭",
+   "ko": "십삼불탑",
+   "state": "needs_review",
+   "note": "역만 이름 (런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070F6C",
+   "template": "070F6C",
+   "style": "glyph01",
+   "source": "点",
+   "ko": "점",
+   "state": "needs_review",
+   "note": "점수 글꼴 (1비트); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070F74",
+   "template": "070F74",
+   "style": "glyph01",
+   "source": "符",
+   "ko": "부",
+   "state": "needs_review",
+   "note": "점수 글꼴 (1비트); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070F7C",
+   "template": "070F7C",
+   "style": "glyph01",
+   "source": "役",
+   "ko": "역",
+   "state": "needs_review",
+   "note": "점수 글꼴 (1비트); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070F84",
+   "template": "070F84",
+   "style": "glyph01",
+   "source": "翻",
+   "ko": "판",
+   "state": "needs_review",
+   "note": "점수 글꼴 (1비트); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070F9C",
+   "template": "070F9C",
+   "style": "glyph01",
+   "source": "雀",
+   "ko": "작",
+   "state": "needs_review",
+   "note": "점수 글꼴 (1비트); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07106C",
+   "template": "07106C",
+   "style": "bubble",
+   "source": "連打開始っス!",
+   "ko": "연타 시작임다!",
+   "state": "needs_review",
+   "note": "벌칙 연타 시작; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0710D4",
+   "template": "0710D4",
+   "style": "bubble",
+   "source": "連打開始っス!",
+   "ko": "연타 시작임다!",
+   "state": "needs_review",
+   "note": "벌칙 연타 시작 (큰 판); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070FBC",
+   "template": "070FBC+070FC4",
+   "style": "bubble",
+   "source": "おやびん、\n挑戦者が現れたっス!!\n[A]:戦う [B]:断る",
+   "ko": "두목,\n도전자가 나타났슴다!!\nA:싸운다 B:거절한다",
+   "state": "needs_review",
+   "note": "난입 도전자 (2대 연결, 런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0710DC",
+   "template": "0710DC+0710E4",
+   "style": "grade_gothic",
+   "source": "おしおきタイムっス!",
+   "ko": "벌칙 타임임다!",
+   "state": "needs_review",
+   "note": "벌칙 선택 화면 제목; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07035C",
+   "template": "07035C",
+   "style": "wind_serif",
+   "source": "東",
+   "ko": "동",
+   "state": "needs_review",
+   "note": "대국 판 표시 (바람); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070364",
+   "template": "070364",
+   "style": "wind_serif",
+   "source": "場",
+   "ko": "장",
+   "state": "needs_review",
+   "note": "대국 판 표시 (공용 場 타일); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07036C",
+   "template": "07036C",
+   "style": "wind_serif",
+   "source": "南",
+   "ko": "남",
+   "state": "needs_review",
+   "note": "대국 판 표시 (바람); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07037C",
+   "template": "07037C",
+   "style": "wind_serif",
+   "source": "西",
+   "ko": "서",
+   "state": "needs_review",
+   "note": "대국 판 표시 (바람, 런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G07038C",
+   "template": "07038C",
+   "style": "wind_serif",
+   "source": "北",
+   "ko": "북",
+   "state": "needs_review",
+   "note": "대국 판 표시 (바람, 런타임 미확인); 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G075D34",
+   "template": "075D34",
+   "style": "tile_label",
+   "source": "ツ\nモ",
+   "ko": "쯔\n모",
+   "state": "needs_review",
+   "note": "쯔모 가능 패 표시; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070264",
+   "template": "070264",
+   "style": "mono_white",
+   "source": "これらの円が楕円に見える場合は、\nモニタの調節をしてください。",
+   "ko": "이 원들이 타원으로 보이면,\n모니터를 조절해 주세요.",
+   "state": "needs_review",
+   "note": "부팅 모니터 조정 화면; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0703AC",
+   "template": "0703AC",
+   "style": "wind_small",
+   "source": "東",
+   "ko": "동",
+   "state": "needs_review",
+   "note": "점수판 자리 바람; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0703B4",
+   "template": "0703B4",
+   "style": "wind_small",
+   "source": "南",
+   "ko": "남",
+   "state": "needs_review",
+   "note": "점수판 자리 바람; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0703BC",
+   "template": "0703BC",
+   "style": "wind_small",
+   "source": "西",
+   "ko": "서",
+   "state": "needs_review",
+   "note": "점수판 자리 바람; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G0703C4",
+   "template": "0703C4",
+   "style": "wind_small",
+   "source": "北",
+   "ko": "북",
+   "state": "needs_review",
+   "note": "점수판 자리 바람; 원문은 화면에서 옮겨 적음"
   }
  ]
 }

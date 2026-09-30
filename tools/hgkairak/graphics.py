@@ -401,3 +401,26 @@ def compose_twotone(rows, mask: Image.Image, bg: int, fill: int, edge: int, cut:
             row.append(edge if border else fill)
         out.append(row)
     return out
+
+
+def squeezed_text_art(lines, font_path, sizes, width, height, fill, outline=None, outline_px=0, min_ratio=0.55,
+                      antialias=False):
+    """Largest size whose text fits the height; if too wide, narrow it horizontally (not below min_ratio)."""
+    for size in sizes:
+        try:
+            wide = text_art(lines, font_path, size, width * 4, height, fill, outline, outline_px, antialias=antialias)
+        except GraphicsError:
+            continue
+        box = wide.getchannel("A").getbbox()
+        if box is None:
+            raise GraphicsError("empty text")
+        tw = box[2] - box[0]
+        if tw > width and width / tw < min_ratio:
+            continue
+        strip = wide.crop((box[0], 0, box[2], height))
+        nw = min(width, tw)
+        strip = strip.resize((nw, height), Image.LANCZOS)   # alpha is thresholded by the caller
+        out = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+        out.paste(strip, ((width - nw) // 2, 0))
+        return out
+    raise GraphicsError(f"text does not fit {width}x{height} even squeezed: {lines}")

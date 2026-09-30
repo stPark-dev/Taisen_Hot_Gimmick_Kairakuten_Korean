@@ -268,3 +268,14 @@ def test_compose_box_rejects_uncovered_cells():
     src = [[31, 31, None], [31, 31, None]]
     with pytest.raises(GraphicsError, match="uncovered"):
         graphics.compose_box(src, Image.new("RGBA", (1, 1)), box=(0, 0, 2, 1), fill=31, palette={31: (0, 0, 0)})
+
+
+def test_squeezed_text_fits_narrow_box_and_keeps_height():
+    from hgkairak.graphics import squeezed_text_art
+    font = "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf"
+    art = squeezed_text_art(["후지쿠라 마코토"], font, range(20, 9, -1), 67, 25, (255, 255, 255), min_ratio=0.55)
+    assert art.size == (67, 25)
+    box = art.getchannel("A").getbbox()
+    assert box[3] - box[1] >= 12          # still full height, only narrowed
+    with pytest.raises(GraphicsError):
+        squeezed_text_art(["아주아주아주아주아주아주긴이름입니다"], font, range(20, 9, -1), 67, 25, (255, 255, 255), min_ratio=0.55)

@@ -20,19 +20,20 @@
 | **v1.0** | **정식판**. 모든 대사·그림 글자가 사람 검수를 통과하고(`distribution_eligible`), `--policy release` 빌드가 성공하는 첫 버전 |
 | v0.x | 개발판. 검수 전 번역이 들어 있으며 빌드 결과물에 `"distribution": false`가 기록됨 |
 
-**현재 버전: v0.1.0 (초벌 개발판)** — 버전 번호의 기준은 [`VERSION`](VERSION) 파일입니다.
+**현재 버전: v0.2.0 (개발판)** — 버전 번호의 기준은 [`VERSION`](VERSION) 파일입니다.
 
-v0.1.0에 들어 있는 것:
+v0.2.0에 들어 있는 것:
 
 - 대사·안내·메뉴·역 이름·테스트 모드 문자열 686개 전체 (초벌 번역 + 독립 2차 검토 반영). 전작과 원문이 같은 242개는 전작 번역을 그대로 사용
 - 타이틀 로고: 제공 이미지로 원래의 등장 연출(19프레임)을 한글로 다시 만듦
-- 그림 글자: 대국 말풍선 107개, 코인 문구 3종, 컨티뉴 화면 문구, 모드 선택 사진 글자(통신 대전 / 1인 플레이)
+- 그림 글자 178개: 대국 말풍선 107, 컨티뉴 대사 27, 상대 후보 이름표 11장, 화료 등급·역만 이름 21, 대국 표시(동장·점수판 바람·쯔모 패), 벌칙 타임·연타 시작, 코인 문구, 모니터 조정 안내, 모드 선택 사진 글자
 - 한글 글꼴: 나눔고딕 15px (대사), 나눔고딕 ExtraBold·나눔명조 ExtraBold (그림 글자)
 
 v1.0까지 남은 일:
 
-- 사람 검수: 대사 686개, 그림 글자 111개가 모두 `needs_review` 상태
-- 아직 처리하지 않은 그림 글자: 상대 후보 이름표(한자 이름), 스태프 크레딧, 대국 화면 표시(東場, ツモ 패 표시 등), 벌칙·엔딩·2대 연결 대전 화면의 글자 — 목록은 [`docs/initial-survey.md`](docs/initial-survey.md) 4.3절
+- 사람 검수: 대사 686개, 그림 글자 178개가 모두 `needs_review` 상태
+- 아직 처리하지 않은 그림 글자: 엔딩 스태프 크레딧, 雀pow·不要 작은 표시 — 목록은 [`docs/initial-survey.md`](docs/initial-survey.md) 4.3절
+- 게임에서 확인하지 못한 것: 2대 연결 대전 전용 화면, 역만 이름, 모니터 조정 안내
 
 ## 준비물
 
@@ -56,6 +57,8 @@ python3 tools/khpatch.py build --source /경로/hgkairak.zip
 python3 -m pytest -q tests
 ```
 
+MAME가 실행할 때 수정된 ROM 파일마다 `WRONG CHECKSUMS` 경고를 출력하는데, 한글판이면 정상입니다(원본 체크섬과 다르기 때문).
+
 번역문을 고친 뒤에는 `build`만 다시 실행하면 됩니다. 원본 ROM이 바뀌었거나 추출 규칙을 바꿨다면 먼저 `python3 tools/khpatch.py extract --source hgkairak.zip`으로 번역 표를 다시 맞춥니다(기존 번역은 유지되고, 원문이 달라진 항목은 오류로 알려 줍니다).
 
 조작 (MAME 기본 키): 코인 `5`, 1P 스타트 `1`, 패 선택 `A`~`N`, 론 `Z`, 쯔모 `N`, 깡 `Left Ctrl`, 퐁 `Left Alt`, 치 `Space`, 리치 `Left Shift`.
@@ -65,7 +68,7 @@ python3 -m pytest -q tests
 | 파일 | 내용 |
 |---|---|
 | [`translation/dialogue.json`](translation/dialogue.json) | 대사 686개. 원문 코드·원문·칸 수·용량(보호 필드)과 번역 `ko`·상태 `state`·메모 `note` |
-| [`translation/graphics_text.json`](translation/graphics_text.json) | 그림 글자 111개. 서식 표 주소·스타일·원문(화면에서 옮겨 적음)·번역·상태 |
+| [`translation/graphics_text.json`](translation/graphics_text.json) | 그림 글자 178개. 서식 표 주소·스타일·원문(화면에서 옮겨 적음)·번역·상태 |
 | [`translation/glossary.json`](translation/glossary.json) | 용어·말투 결정 (전작에서 승인된 것은 그대로 승계, 이번 작품 캐릭터 이름 등은 proposed) |
 
 번역문 규칙 (전작과 같음):

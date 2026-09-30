@@ -26,12 +26,23 @@ TEXT_FONT = "/usr/share/fonts/truetype/nanum/NanumGothicExtraBold.ttf"
 MYEONGJO_XB = "/usr/share/fonts/truetype/nanum/NanumMyeongjoExtraBold.ttf"
 MODE_LABEL = {"type": "photo_label", "palette_rom": 0x6A190, "detect": "dark_halo", "halo_px": 4,
               "fill": (0, 0, 0), "outline": (255, 255, 255), "outline_px": 3}   # mode select photos, bank 8
+PLATE_LABEL = {"type": "photo_label", "palette_rom": 0x69D90, "detect": "solid", "bg": (0, 0, 0),
+               "fill": (255, 255, 255), "outline": None, "outline_px": 0, "squeeze": True}   # opponent select name plates, bank 8
 GRAPHICS: list[dict] = [
     {"id": "mode_versus", "sheet": (0x148B0, 8, 9), "band": (4, 106, 123, 143), "lines": ["통신 대전"], **MODE_LABEL},
     {"id": "mode_versus_lit", "sheet": (0x14820, 8, 9), "band": (4, 106, 123, 143), "lines": ["통신 대전"], **MODE_LABEL},
     {"id": "mode_versus_f3", "sheet": (0x14868, 8, 9), "band": (4, 106, 123, 143), "lines": ["통신 대전"], **MODE_LABEL},
-    {"id": "mode_versus_f1", "sheet": (0x147A2, 7, 9), "band": (3, 106, 108, 143), "lines": ["통신 대전"], **MODE_LABEL},
-    {"id": "mode_versus_f2", "sheet": (0x147E1, 7, 9), "band": (3, 106, 108, 143), "lines": ["통신 대전"], **MODE_LABEL},
+    {"id": "plate_makoto", "sheet": (0x1457D, 5, 9), "band": (13, 119, 79, 143), "lines": ["후지쿠라 마코토"], **PLATE_LABEL},
+    {"id": "plate_noromi", "sheet": (0x145AA, 5, 9), "band": (13, 119, 79, 143), "lines": ["노로타 노로미"], **PLATE_LABEL},
+    {"id": "plate_yaeko", "sheet": (0x145D7, 5, 9), "band": (13, 119, 79, 143), "lines": ["타카기 야에코"], **PLATE_LABEL},
+    {"id": "plate_mea", "sheet": (0x1463A, 5, 9), "band": (13, 119, 79, 143), "lines": ["메아"], **PLATE_LABEL},
+    {"id": "plate_miki", "sheet": (0x14667, 5, 9), "band": (13, 119, 79, 143), "lines": ["쿠로다 미키"], **PLATE_LABEL},
+    {"id": "plate_mayu", "sheet": (0x14694, 5, 9), "band": (13, 119, 79, 143), "lines": ["코이누바라 마유"], **PLATE_LABEL},
+    {"id": "plate_meruru", "sheet": (0x146F7, 5, 9), "band": (13, 119, 79, 143), "lines": ["메루루"], **PLATE_LABEL},
+    {"id": "plate_m1", "sheet": (0x14724, 5, 9), "band": (13, 119, 79, 143), "lines": ["M-1호"], **PLATE_LABEL},
+    {"id": "plate_osuzu", "sheet": (0x14751, 5, 9), "band": (13, 119, 79, 143), "lines": ["오스즈"], **PLATE_LABEL},
+    {"id": "plate_yurika", "sheet": (0x147A2, 7, 9), "band": (13, 119, 111, 143), "lines": ["산노 유리카"], **PLATE_LABEL},
+    {"id": "plate_penguin", "sheet": (0x147E1, 7, 9), "band": (13, 119, 111, 143), "lines": ["펭귄 학대녀"], **PLATE_LABEL},
     {"id": "mode_single", "sheet": (0x14920, 8, 4), "band": (4, 18, 123, 62), "lines": ["1인 플레이"], **MODE_LABEL},
 ]
 # Styles for translated graphics text (translation/graphics_text.json). Palettes are ROM copies of the scene palette bank
@@ -43,9 +54,34 @@ TEXT_STYLES: dict[str, dict] = {
     "outline": {"kind": "outline", "col": 0x06, "palette_rom": BANK6, "indices": tuple(range(1, 16)), "transparent": 0,
                 "font": TEXT_FONT, "sizes": tuple(range(24, 11, -1)), "color": (244, 244, 244),
                 "outline": (16, 16, 16), "outline_px": 2, "line_gap": 0, "align": "center", "margin": 2},
+    "outline_left": {"kind": "outline", "col": 0x06, "palette_rom": BANK6, "indices": tuple(range(1, 16)), "transparent": 0,
+                     "font": TEXT_FONT, "sizes": tuple(range(24, 11, -1)), "color": (244, 244, 244),
+                     "outline": (16, 16, 16), "outline_px": 2, "line_gap": 0, "align": "left", "margin": 2},
     "outline_thin": {"kind": "outline", "col": 0x06, "palette_rom": BANK6, "indices": tuple(range(1, 16)), "transparent": 0,
                      "font": TEXT_FONT, "sizes": tuple(range(16, 9, -1)), "color": (244, 244, 244),
                      "outline": (16, 16, 16), "outline_px": 1, "line_gap": 0, "align": "center", "margin": 1},
+    "grade_serif": {"kind": "outline", "col": 0x06, "palette_rom": BANK6, "indices": tuple(range(33, 48)), "transparent": 0,
+                    "font": MYEONGJO_XB, "sizes": tuple(range(32, 9, -1)), "color": (255, 255, 255), "outline": None,
+                    "outline_px": 0, "line_gap": 0, "align": "center", "margin": 1, "antialias": True,
+                    "blend_bg": (8, 93, 121), "alpha_cut": 40},   # white over the table teal (indices 33-47 = white..teal)
+    "grade_gothic": {"kind": "outline", "col": 0x06, "palette_rom": BANK6, "indices": tuple(range(33, 48)), "transparent": 0,
+                     "font": TEXT_FONT, "sizes": tuple(range(32, 9, -1)), "color": (255, 255, 255), "outline": None,
+                     "outline_px": 0, "line_gap": 0, "align": "center", "margin": 1, "antialias": True,
+                     "blend_bg": (8, 93, 121), "alpha_cut": 40},
+    "glyph01": {"kind": "twotone", "col": 0x06, "font": "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf",
+                "sizes": (15, 14, 13, 12, 11, 10), "align": "center", "margin": 0, "roles": (0, 1, 1)},   # 1-bit score font
+    "wind_serif": {"kind": "outline", "col": 0x06, "palette_rom": BANK6, "indices": tuple(range(17, 32)), "transparent": 0,
+                   "font": MYEONGJO_XB, "sizes": tuple(range(16, 9, -1)), "color": (255, 255, 255), "outline": None,
+                   "outline_px": 0, "line_gap": 0, "align": "center", "margin": 0, "antialias": True,
+                   "blend_bg": (8, 93, 121), "alpha_cut": 40},   # 東場 marker, one glyph per 16px tile
+    "tile_label": {"kind": "box", "col": 0x20, "palette_rom": 0x67D90, "indices": "used", "fill": 78, "inset": 0,
+                   "font": "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf", "sizes": (14, 13, 12, 11),
+                   "color": (247, 247, 243), "line_gap": 2, "antialias": True},
+    "mono_white": {"kind": "outline", "col": 0x00, "fixed_palette": {65: (255, 255, 255)}, "indices": (65,), "transparent": 0,
+                   "font": TEXT_FONT, "sizes": tuple(range(16, 9, -1)), "color": (255, 255, 255), "outline": None,
+                   "outline_px": 0, "line_gap": 1, "align": "center", "margin": 1},
+    "wind_small": {"kind": "twotone", "col": 0x00, "font": "/usr/share/fonts/truetype/nanum/NanumGothicExtraBold.ttf",
+                   "sizes": (14, 13, 12, 11), "align": "center", "margin": 1, "roles": (0, 12, 15), "outer": True},
     "outline_coin": {"kind": "outline", "col": 0x06, "palette_rom": BANK6, "indices": tuple(range(1, 16)) + (50,),
                      "transparent": 0, "font": TEXT_FONT, "sizes": tuple(range(24, 11, -1)), "color": (244, 244, 244),
                      "outline": (16, 16, 16), "outline_px": 2, "line_gap": 0, "align": "center", "margin": 2},
@@ -342,14 +378,24 @@ def photo_label_writes(plan, files, image, spec) -> dict:
         r = spec.get("halo_px", 3)
         near = {(x + dx, y + dy) for x, y in dark for dx in range(-r, r + 1) for dy in range(-r, r + 1)}
         core = dark | {(x, y) for x, y in band if (x, y) in near and bright(rgb[y][x])}
+    elif spec.get("detect") == "solid":   # flat text band (e.g. name plates): repaint the whole band
+        core = set(band)
     else:
         core = {(x, y) for x, y in band if bright(rgb[y][x]) or lum(rgb[y][x]) < 45}
     mask = {(x + dx, y + dy) for x, y in core for dx in (-1, 0, 1) for dy in (-1, 0, 1)
             if x0 <= x + dx <= x1 and y0 <= y + dy <= y1}
-    rgb = graphics.inpaint(rgb, mask)
+    if spec.get("detect") == "solid":
+        rgb = [[spec["bg"] if (x, y) in mask else c for x, c in enumerate(r)] for y, r in enumerate(rgb)]
+    else:
+        rgb = graphics.inpaint(rgb, mask)
     bw, bh = x1 - x0 + 1, y1 - y0 + 1
-    art = fit_text(spec["lines"], spec.get("font", TEXT_FONT), tuple(range(30, 11, -1)), bw, bh,
-                   spec.get("fill", (255, 255, 255)), 0, spec.get("outline", (0, 0, 0)), spec.get("outline_px", 2), False)
+    if spec.get("squeeze"):
+        art = graphics.squeezed_text_art(spec["lines"], spec.get("font", TEXT_FONT), range(30, 11, -1), bw, bh,
+                                         spec.get("fill", (255, 255, 255)), spec.get("outline"), spec.get("outline_px", 0))
+    else:
+        art = fit_text(spec["lines"], spec.get("font", TEXT_FONT), tuple(range(30, 11, -1)), bw, bh,
+                       spec.get("fill", (255, 255, 255)), 0, spec.get("outline", (0, 0, 0)), spec.get("outline_px", 2),
+                       spec.get("antialias", False))
     new = [list(r) for r in rows]
     cache: dict[tuple, int] = {}
     for y in range(y0, y1 + 1):
