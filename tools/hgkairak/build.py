@@ -31,6 +31,11 @@ MODE_LABEL = {"type": "photo_label", "palette_rom": 0x6A190, "detect": "dark_hal
 PLATE_LABEL = {"type": "photo_label", "palette_rom": 0x69D90, "detect": "solid", "bg": (0, 0, 0),
                "fill": (255, 255, 255), "outline": None, "outline_px": 0, "squeeze": True}   # opponent select name plates, bank 8
 GRAPHICS: list[dict] = [
+    {"id": "jan_pow", "type": "pow_label", "sheets": tuple((0x18761 + 3 * k, 3, 1) for k in range(12)),
+     "palette_rom": 0x68610, "indices": (15, 32, 33, 34, 35, 36, 42), "lines": ["작파워"]},   # 雀pow gauge label (bank 2)
+    {"id": "tile_fuyo", "type": "photo_label", "sheet": (0x16859, 2, 2), "palette_rom": 0x67D90, "band": (1, 0, 19, 25),
+     "lines": ["버", "림"], "detect": "red", "fill": (140, 16, 32), "outline": None, "outline_px": 0,
+     "font": MYEONGJO_XB, "antialias": True, "sizes": (13, 12, 11, 10)},   # 不要 marker on a hand tile (tile replacement): user decision 2026-09-30
     {"id": "credit_direction", "type": "credit_page", "sheet": {"tiles": (0x00737, 0x007C3), "w": 10, "h": 14}, "palette_rom": 0x68D90,
      "items": [
         {"box": (146, 10, 252, 36), "lines": ["제작/감독"], "align": "left", "size": 22},
@@ -456,6 +461,8 @@ def photo_label_writes(plan, files, image, spec) -> dict:
         r = spec.get("halo_px", 3)
         near = {(x + dx, y + dy) for x, y in dark for dx in range(-r, r + 1) for dy in range(-r, r + 1)}
         core = dark | {(x, y) for x, y in band if (x, y) in near and bright(rgb[y][x])}
+    elif spec.get("detect") == "red":     # red glyph on a tile face (e.g. 不要 marker)
+        core = {(x, y) for x, y in band if rgb[y][x][0] - max(rgb[y][x][1], rgb[y][x][2]) > 50}
     elif spec.get("detect") == "solid":   # flat text band (e.g. name plates): repaint the whole band
         core = set(band)
     else:
@@ -471,7 +478,7 @@ def photo_label_writes(plan, files, image, spec) -> dict:
         art = graphics.squeezed_text_art(spec["lines"], spec.get("font", TEXT_FONT), range(30, 11, -1), bw, bh,
                                          spec.get("fill", (255, 255, 255)), spec.get("outline"), spec.get("outline_px", 0))
     else:
-        art = fit_text(spec["lines"], spec.get("font", TEXT_FONT), tuple(range(30, 11, -1)), bw, bh,
+        art = fit_text(spec["lines"], spec.get("font", TEXT_FONT), spec.get("sizes", tuple(range(30, 11, -1))), bw, bh,
                        spec.get("fill", (255, 255, 255)), 0, spec.get("outline", (0, 0, 0)), spec.get("outline_px", 2),
                        spec.get("antialias", False))
     new = [list(r) for r in rows]
@@ -567,6 +574,49 @@ def credit_page_writes(plan, files, image, spec) -> dict:
     return {spec["id"]: {"tiles_written": len(w), "_tiles": w}}
 
 
+
+def pow_label_writes(plan, files, image, spec) -> dict:
+    """雀pow gauge label: red '+N' pixels stay on top; everything else is redrawn as outlined text with a
+    white-to-lavender vertical gradient, like the source."""
+    pal = graphics.rom_palette(image, spec["palette_rom"], spec["indices"])
+    red = lambda v: v in pal and pal[v][0] - max(pal[v][1], pal[v][2]) > 80
+    written = {}
+    for tnum, w, h in spec["sheets"]:
+        sheet = graphics.SpriteSheet((tnum,), w, h)
+        rows = sheet.read(lambda off, n: region_read(files, off, n))
+        stray = {v for r in rows for v in r} - set(spec["indices"]) - {0}
+        if stray:
+            raise RuntimeError(f"{spec['id']}: unexpected palette indices {sorted(stray)}")
+        art = None
+        for size in range(16, 8, -1):
+            try:
+                art = graphics.text_art(spec["lines"], TEXT_FONT, size, sheet.width, sheet.height, (255, 255, 255),
+                                        (16, 16, 48), 1, align="left", margin=1)
+                break
+            except graphics.GraphicsError:
+                continue
+        if art is None:
+            raise graphics.GraphicsError(f"{spec['id']}: text does not fit")
+        new, cache = [], {}
+        for y, r in enumerate(rows):
+            t = y / max(1, sheet.height - 1)
+            grad = tuple(round(a + (b - a) * t) for a, b in zip((255, 255, 255), (170, 160, 235)))
+            row = []
+            for x, v in enumerate(r):
+                if red(v):
+                    row.append(v)
+                    continue
+                cr, cg, cb, a = art.getpixel((x, y))
+                if a < 128:
+                    row.append(0)
+                    continue
+                c = grad if (cr, cg, cb) == (255, 255, 255) else (cr, cg, cb)
+                row.append(cache.setdefault(c, graphics.nearest({k: q for k, q in pal.items() if not red(k)}, c)))
+            new.append(row)
+        written.update(_tile_changes(plan, sheet, rows, new, f"pow:{spec['id']}"))
+    return {spec["id"]: {"tiles_written": len(written), "_tiles": written}}
+
+
 def card_writes(plan, files, image, spec) -> dict:
     """Name card: sharp Korean card drawn at the last frame's size, blurred for the earlier frames."""
     reader = lambda off, n: region_read(files, off, n)
@@ -610,6 +660,9 @@ def graphics_writes(plan, files, image, assets_dir) -> dict:
     for spec in GRAPHICS:
         if spec["type"] == "card":
             report.update(card_writes(plan, files, image, spec))
+            continue
+        if spec["type"] == "pow_label":
+            report.update(pow_label_writes(plan, files, image, spec))
             continue
         if spec["type"] == "name_card":
             report.update(name_card_writes(plan, files, image, spec))

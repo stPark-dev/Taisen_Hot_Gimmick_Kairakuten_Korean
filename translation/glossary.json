@@ -118,6 +118,21 @@
    "output": "벌칙",
    "state": "proposed",
    "evidence": "전작 번역(おしおきタイム→벌칙 타임) 계열"
+  },
+  {
+   "id": "T-FUYO",
+   "source": "不要 (패에 붙는 표시)",
+   "output": "버림 (단독 패) / 불필요·필요 없음 (조건 표시)",
+   "state": "approved",
+   "evidence": "이 게임에서는 패 바꾸기 때 바꿀 패 한 장에 붙는 표시 → 버림",
+   "approval": "사용자 결정 2026-09-30"
+  },
+  {
+   "id": "T-JANPOW",
+   "source": "雀pow (게이지 표시)",
+   "output": "작파워",
+   "state": "approved",
+   "approval": "사용자 결정 2026-09-30"
   }
  ]
 }
