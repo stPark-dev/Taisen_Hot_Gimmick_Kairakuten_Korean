@@ -165,6 +165,8 @@ TEXT_STYLES: dict[str, dict] = {
                    "outline_px": 0, "line_gap": 1, "align": "center", "margin": 1},
     "wind_small": {"kind": "twotone", "col": 0x00, "font": "/usr/share/fonts/truetype/nanum/NanumGothicExtraBold.ttf",
                    "sizes": (14, 13, 12, 11), "align": "center", "margin": 1, "roles": (0, 12, 15), "outer": True},
+    "label_small": {"kind": "framed_label", "col": 0x00, "ink": 65, "font": "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf",
+                    "sizes": (12, 11, 10, 9, 8)},   # boxed test-mode labels (palette-free 0/65)
     "outline_coin": {"kind": "outline", "col": 0x06, "palette_rom": BANK6, "indices": tuple(range(1, 16)) + (50,),
                      "transparent": 0, "font": TEXT_FONT, "sizes": tuple(range(24, 11, -1)), "color": (244, 244, 244),
                      "outline": (16, 16, 16), "outline_px": 2, "line_gap": 0, "align": "center", "margin": 2},
@@ -346,6 +348,8 @@ def render_graphics_text(files, image, entry):
     rows = sheet.read(lambda off, n: region_read(files, off, n))
     if style["kind"] == "glyph":
         return sheet, rows, glyph_rows(sheet, rows, entry)
+    if style["kind"] == "framed_label":
+        return sheet, rows, framed_label_rows(rows, entry, style)
     if style["kind"] == "twotone":
         bg, fill, edge = style.get("roles") or graphics.twotone_roles(rows)
         present = {v for r in rows for v in r if v is not None}
@@ -408,6 +412,60 @@ def glyph_rows(sheet, rows, entry):
         t = rasterize(ch, GLYPH_FONT, 15)
         for i, v in enumerate(t):
             out[cy + i // 16][cx + i % 16] = v
+    return out
+
+
+
+def framed_label_rows(rows, entry, style):
+    """Boxed two-value label (0 / ink): keep the outline (ink pixels connected to the label's outer edge),
+    clear the inside and draw the text 1px clear of the outline."""
+    ink = style["ink"]
+    h, w = len(rows), len(rows[0])
+    if any(v is None for r in rows for v in r) or {v for r in rows for v in r} - {0, ink}:
+        raise RuntimeError(f"{entry['id']}: not a two-value label")
+    pts = [(x, y) for y in range(h) for x in range(w) if rows[y][x] == ink]
+    if not pts:
+        raise RuntimeError(f"{entry['id']}: empty label")
+    x0, y0 = min(p[0] for p in pts), min(p[1] for p in pts)
+    x1, y1 = max(p[0] for p in pts), max(p[1] for p in pts)
+    frame, stack = set(), [p for p in pts if p[0] in (x0, x1) or p[1] in (y0, y1)]
+    while stack:
+        x, y = stack.pop()
+        if (x, y) in frame:
+            continue
+        frame.add((x, y))
+        for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+            if 0 <= nx < w and 0 <= ny < h and rows[ny][nx] == ink and (nx, ny) not in frame:
+                stack.append((nx, ny))
+    # interior = pixels strictly inside the frame on their row, 1px clear of it
+    inside = []
+    for y in range(y0 + 1, y1):
+        xs = [x for x in range(w) if (x, y) in frame]
+        if len(xs) >= 2:
+            inside += [(x, y) for x in range(xs[0] + 2, xs[-1] - 1)]
+    if not inside:
+        raise RuntimeError(f"{entry['id']}: label has no interior")
+    inner = set(inside)
+    ys = sorted({y for _, y in inside})
+    mid = ys[len(ys) // 2]
+    mx = [x for x, y in inside if y == mid]
+    ix0, ix1, iy0, iy1 = min(mx), max(mx), ys[0], ys[-1]
+    for size in style["sizes"]:   # largest size whose pixels all stay inside the outline (rounded ends)
+        try:
+            art = graphics.squeezed_text_art(entry["ko"].split("\n"), style["font"], (size,), ix1 - ix0 + 1,
+                                             iy1 - iy0 + 1, (255, 255, 255), min_ratio=0.6)
+        except graphics.GraphicsError:
+            continue
+        ink_px = [(ix0 + x, iy0 + y) for y in range(art.height) for x in range(art.width) if art.getpixel((x, y))[3] >= 128]
+        if all(p in inner for p in ink_px):
+            break
+    else:
+        raise RuntimeError(f"{entry['id']}: text does not fit inside the outline")
+    out = [list(r) for r in rows]
+    for x, y in inner:
+        out[y][x] = 0
+    for x, y in ink_px:
+        out[y][x] = ink
     return out
 
 

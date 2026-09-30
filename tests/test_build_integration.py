@@ -583,3 +583,42 @@ def test_photo_label_red_detection_repaints_red_glyph(tmp_path, monkeypatch):
     assert out[0] == [3] * 32
     assert sum(out[y][x] == 2 for y in range(4, 28) for x in range(8, 20)) < 24 * 12   # old glyph block gone
     assert any(v == 2 for r in out for v in r)                                          # new red text
+
+
+def test_framed_label_keeps_box_outline(tmp_path, monkeypatch):
+    import zipfile
+    from hgkairak import graphics
+    d, prof = make_set(tmp_path)
+    sheet = graphics.SpriteSheet((0x9000,), 2, 1)
+    rows = [[0] * 32 for _ in range(16)]
+    for x in range(1, 31):
+        rows[1][x] = rows[14][x] = 65
+    for y in range(1, 15):
+        rows[y][1] = rows[y][30] = 65
+    for y in range(5, 11):
+        for x in range(8, 24):
+            rows[y][x] = 65                      # old text
+    _write_tiles(d, prof, rows, sheet)
+    monkeypatch.setattr(source, "PROFILE", prof)
+    monkeypatch.setattr(build, "TITLE_STRIP", False)
+    monkeypatch.setattr(build, "TEMPLATE_AREA", (0x60000, 0x70000))
+    data = {n: bytearray((d / n).read_bytes()) for n in prof}
+    _cpu_put(data["1.u22"], data["2.u23"], 0x68004, struct.pack(">II", (1 << 27) | (1 << 12), 0x9000))
+    for n, b in data.items():
+        (d / n).write_bytes(bytes(b))
+        prof[n] = (len(b), hashlib.sha1(b).hexdigest())
+    style = {"kind": "framed_label", "col": 0x00, "ink": 65, "font": NANUM, "sizes": (11, 10, 9, 8)}
+    monkeypatch.setattr(build, "TEXT_STYLES", dict(build.TEXT_STYLES, framed=style))
+    gt = tmp_path / "g.json"
+    entry = {"id": "G068004", "template": "068004", "style": "framed", "source": "カン", "ko": "깡", "state": "needs_review", "note": ""}
+    gt.write_text(json.dumps({"schema": build.GFX_SCHEMA, "entries": [entry]}, ensure_ascii=False), encoding="utf-8")
+    table = tmp_path / "t.json"
+    build.extract(d, table)
+    build.build(d, table, tmp_path / "out", NANUM, gfx_table=gt)
+    z = zipfile.ZipFile(tmp_path / "out" / "hgkairak.zip")
+    files = {n: z.read(n) for n in z.namelist()}
+    out = sheet.read(lambda o, n: build.region_read(files, o, n))
+    assert all(out[1][x] == 65 and out[14][x] == 65 for x in range(1, 31))      # outline kept
+    assert all(out[y][1] == 65 and out[y][30] == 65 for y in range(1, 15))
+    assert all(out[y][x] == 0 for y in range(2, 14) for x in (2, 29))           # gap next to the frame stays clear
+    assert any(out[y][x] == 65 for y in range(3, 13) for x in range(4, 28))     # new text inside

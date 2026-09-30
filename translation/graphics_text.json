@@ -1602,6 +1602,87 @@
    "ko": "북",
    "state": "needs_review",
    "note": "점수판 자리 바람; 원문은 화면에서 옮겨 적음"
+  },
+  {
+   "id": "G070304",
+   "template": "070304",
+   "style": "label_small",
+   "source": "スタート",
+   "ko": "스타트",
+   "state": "needs_review",
+   "note": "테스트 모드 입력 라벨 (スタート는 메뉴 안내 아이콘으로도 쓰임); 전작 번역 재사용"
+  },
+  {
+   "id": "G07030C",
+   "template": "07030C",
+   "style": "label_small",
+   "source": "カン",
+   "ko": "깡",
+   "state": "needs_review",
+   "note": "테스트 모드 입력 라벨 (スタート는 메뉴 안내 아이콘으로도 쓰임); 전작 번역 재사용"
+  },
+  {
+   "id": "G070314",
+   "template": "070314",
+   "style": "label_small",
+   "source": "ポン",
+   "ko": "퐁",
+   "state": "needs_review",
+   "note": "테스트 모드 입력 라벨 (スタート는 메뉴 안내 아이콘으로도 쓰임); 전작 번역 재사용"
+  },
+  {
+   "id": "G07031C",
+   "template": "07031C",
+   "style": "label_small",
+   "source": "チー",
+   "ko": "치",
+   "state": "needs_review",
+   "note": "테스트 모드 입력 라벨 (スタート는 메뉴 안내 아이콘으로도 쓰임); 전작 번역 재사용"
+  },
+  {
+   "id": "G070324",
+   "template": "070324",
+   "style": "label_small",
+   "source": "リーチ",
+   "ko": "리치",
+   "state": "needs_review",
+   "note": "테스트 모드 입력 라벨 (スタート는 메뉴 안내 아이콘으로도 쓰임); 전작 번역 재사용"
+  },
+  {
+   "id": "G07032C",
+   "template": "07032C",
+   "style": "label_small",
+   "source": "ロン",
+   "ko": "론",
+   "state": "needs_review",
+   "note": "테스트 모드 입력 라벨 (スタート는 메뉴 안내 아이콘으로도 쓰임); 전작 번역 재사용"
+  },
+  {
+   "id": "G070334",
+   "template": "070334",
+   "style": "label_small",
+   "source": "コイン",
+   "ko": "코인",
+   "state": "needs_review",
+   "note": "테스트 모드 입력 라벨 (スタート는 메뉴 안내 아이콘으로도 쓰임); 전작 번역 재사용"
+  },
+  {
+   "id": "G07033C",
+   "template": "07033C",
+   "style": "label_small",
+   "source": "サービス",
+   "ko": "서비스",
+   "state": "needs_review",
+   "note": "테스트 모드 입력 라벨 (スタート는 메뉴 안내 아이콘으로도 쓰임); 전작 번역 재사용"
+  },
+  {
+   "id": "G070344",
+   "template": "070344",
+   "style": "label_small",
+   "source": "テスト",
+   "ko": "테스트",
+   "state": "needs_review",
+   "note": "테스트 모드 입력 라벨 (スタート는 메뉴 안내 아이콘으로도 쓰임); 전작 번역 재사용"
   }
  ]
 }
