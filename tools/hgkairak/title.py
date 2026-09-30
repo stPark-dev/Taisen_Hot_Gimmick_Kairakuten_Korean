@@ -35,7 +35,11 @@ SCREEN = (320, 224)
 FINAL_BOX = (30, 14, 289, 178)      # Korean logo fits here (source logo: 36,20-283,176; coin text below)
 HOT_INTRO_BOX = (21, 60, 299, 148)  # source frame 4 extent
 KWAE_INTRO_BOX = (56, 62, 263, 140)  # source frame 9 extent
-LAYERS = {"oval": "gfx/title_layer_oval.png", "hot": "gfx/title_layer_hot.png", "kwae": "gfx/title_layer_kwae.png"}
+# v2 layers (user-provided 2026-09-30) are separately cropped pieces; each is fitted into the box its v1
+# counterpart occupied on the shared 768x512 canvas, which keeps the approved logo arrangement.
+LAYERS = {"oval": "gfx/title_layer_oval_v2.png", "hot": "gfx/title_layer_hot_v2.png", "kwae": "gfx/title_layer_kwae_v2.png"}
+LAYOUT_CANVAS = (768, 512)
+LAYOUT = {"oval": (5, 21, 763, 495), "hot": (41, 102, 706, 346), "kwae": (95, 297, 677, 509)}
 
 # One entry per source frame: ("blank",) | ("intro", piece, zoom) | ("oval", alpha) | ("slide", dy_hot, dy_kwae)
 # | ("final", white)
@@ -86,6 +90,27 @@ def _fit(bbox, box) -> tuple[float, tuple[float, float]]:
     x0, y0, x1, y1 = box
     scale = min((x1 - x0 + 1) / bw, (y1 - y0 + 1) / bh)
     return scale, ((x0 + x1 + 1) / 2, (y0 + y1 + 1) / 2)
+
+
+def arrange(layers: dict[str, Image.Image], boxes, canvas) -> dict[str, Image.Image]:
+    """Fit each piece's opaque bbox into its layout box (aspect kept, centred) on a shared canvas."""
+    out = {}
+    for name, im in layers.items():
+        if name not in boxes:
+            raise GraphicsError(f"no layout box for title layer {name!r}")
+        im = im.convert("RGBA")
+        bb = im.getchannel("A").point(lambda a: 255 if a >= 128 else 0).getbbox()
+        if bb is None:
+            raise GraphicsError(f"empty title layer {name!r}")
+        x0, y0, x1, y1 = boxes[name]
+        piece = im.crop(bb)
+        scale = min((x1 - x0 + 1) / piece.width, (y1 - y0 + 1) / piece.height)
+        size = (max(1, round(piece.width * scale)), max(1, round(piece.height * scale)))
+        piece = piece.resize(size, Image.LANCZOS)
+        layer = Image.new("RGBA", canvas, (0, 0, 0, 0))
+        layer.alpha_composite(piece, (round((x0 + x1 + 1 - size[0]) / 2), round((y0 + y1 + 1 - size[1]) / 2)))
+        out[name] = layer
+    return out
 
 
 def compose_frames(layers: dict[str, Image.Image]) -> list[Image.Image]:
@@ -202,7 +227,7 @@ def title_writes(plan, files, image, assets_dir, add_mapped, region_read, main_m
     for k, p in paths.items():
         with Image.open(p) as im:
             layers[k] = im.copy()
-    frames = [quantize(f, palette) for f in compose_frames(layers)]
+    frames = [quantize(f, palette) for f in compose_frames(arrange(layers, LAYOUT, LAYOUT_CANVAS))]
     tiles, maps = allocate(frames, POOL, geo.cols, geo.rows)
     for tn, t in tiles.items():
         add_mapped(plan, f"title:tile:{tn:05X}", gfx_map, tn * 256, region_read(files, tn * 256, 256), t)

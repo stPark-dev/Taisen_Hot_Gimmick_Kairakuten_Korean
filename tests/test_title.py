@@ -128,6 +128,26 @@ def test_real_title_assets_fit_the_pool_with_recorded_margin():
     from hgkairak.graphics import rom_palette
     pal = rom_palette(img, title.PALETTE_ROM, idx)
     layers = {k: Image.open(root / "assets" / v) for k, v in title.LAYERS.items()}
-    frames = [title.quantize(f, pal) for f in title.compose_frames(layers)]
+    frames = [title.quantize(f, pal) for f in title.compose_frames(title.arrange(layers, title.LAYOUT, title.LAYOUT_CANVAS))]
     tiles, _ = title.allocate(frames, (title.POOL[0], title.POOL[0] + 10000), 20, 14)
     assert len(tiles) <= title.POOL[1] - title.POOL[0]
+
+
+def test_arrange_places_each_piece_inside_its_box_keeping_aspect():
+    a = Image.new("RGBA", (400, 100), (0, 0, 0, 0))
+    for x in range(20, 380):
+        for y in range(10, 90):
+            a.putpixel((x, y), (255, 0, 0, 255))
+    out = title.arrange({"hot": a}, {"hot": (100, 50, 299, 149)}, (768, 512))
+    box = out["hot"].getchannel("A").point(lambda v: 255 if v >= 128 else 0).getbbox()
+    assert out["hot"].size == (768, 512)
+    assert 100 <= box[0] and box[2] <= 300 and 50 <= box[1] and box[3] <= 150
+    w, h = box[2] - box[0], box[3] - box[1]
+    assert abs(w / h - 360 / 80) < 0.1 and (w >= 198 or h >= 98)     # aspect kept, fills one side
+
+
+def test_arrange_rejects_unknown_or_empty_piece():
+    with pytest.raises(GraphicsError):
+        title.arrange({"hot": Image.new("RGBA", (10, 10))}, {"hot": (0, 0, 9, 9)}, (768, 512))
+    with pytest.raises(GraphicsError):
+        title.arrange({"x": Image.new("RGBA", (10, 10), (1, 1, 1, 255))}, {"hot": (0, 0, 9, 9)}, (768, 512))
