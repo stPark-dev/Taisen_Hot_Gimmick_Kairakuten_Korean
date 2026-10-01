@@ -6,272 +6,272 @@
    "kind": "credit_page",
    "summary": "캐릭터 디자인 / 이노우에 타쿠야 / 쿠가야마 리카코 / 카토 레이지로 / 카루마 타츠로 / 코토부키 카즈키 / 도만 세이만 / 토키사카 무기 / 후미즈키 코우 / 모리나가 밀크 / 요키히",
    "fingerprint": "74d14335aee9e57fcbdb03f718f8a1ae31e9d59f",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "credit_design",
    "kind": "credit_page",
    "summary": "디자인 / 츠카코시 요코 / 타니구치 에미 / 후지타 케이조 / 이와부치 요스케 / 카지카와 마사시 / 마에다 야스츠구 / 사카모토 사치코 / 노하라 신지 / 코타니 토모유키",
    "fingerprint": "7669f245255b18ad935e5ce2eb112623cfe8ff5c",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "credit_direction",
    "kind": "credit_page",
    "summary": "제작/감독 / 나카무라 신스케 / 기획/각본 / 야마다 케이시 / 프로그램 / 사이토 시오리 / 디자인/연출 / 오가와 효에",
    "fingerprint": "b29346d8a39f43d82ba9542aa67c66f1d55c4263",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "credit_final",
    "kind": "credit_page",
    "summary": "협력 / 와니 매거진사 / 제작/저작 / 1998 사이쿄",
    "fingerprint": "95f832f8b74f98fc1dfd946858c71452ee843975",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "credit_guest",
    "kind": "credit_page",
    "summary": "게스트 캐릭터 디자인 / 촬영 협력 / 츠카사 준 / 나카무라 히로후미 / 무라타 렌지 / 유사 신이치 / 이가라시 노리유키 / (작 아메리카) / 코타니 토모유키 / (작 재팬)",
    "fingerprint": "305d1bfed881b217875772960625a8220bda28bd",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "credit_voice",
    "kind": "credit_page",
    "summary": "목소리 출연 / 아사미 준코 / 이마하시 카츠요 / 오오타니 이쿠에 / 오리카사 아이 / 카츠키 마사코 / 코오로기 사토미 / 타카다 유미 / 타나카 아츠코 / 야지마 아키코 / 와카모토 노리오",
    "fingerprint": "63123b1d419668f8d3c3854c62981e7b13039535",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "jan_pow",
    "kind": "pow_label",
    "summary": "작파워",
    "fingerprint": "b8a6e9b63b985a310768b6886a77300da9b7d6d9",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "mode_single",
    "kind": "photo_label",
    "summary": "1인 플레이",
    "fingerprint": "85b53a490c5517c67b015708c2561c1299cb125b",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "mode_versus",
    "kind": "photo_label",
    "summary": "통신 대전",
    "fingerprint": "a0fe4be0c0f21b8949825bd915c63fe1e9587953",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "mode_versus_f3",
    "kind": "photo_label",
    "summary": "통신 대전",
    "fingerprint": "0b60827dd8bf736c72aa343e2446d41ddf2f4bfb",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "mode_versus_lit",
    "kind": "photo_label",
    "summary": "통신 대전",
    "fingerprint": "2281e6fa20d973fd51b6fc97fbbae27ad5ad97dd",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "namecard_00",
    "kind": "name_card",
    "summary": "후미즈키 코우",
    "fingerprint": "c1e90c3bcbe7baf3a9222d6e266ee6dfee94a175",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "namecard_01",
    "kind": "name_card",
    "summary": "토키사카 무기",
    "fingerprint": "0362e378571e328402200340a2f110b17cc34b80",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "namecard_02",
    "kind": "name_card",
    "summary": "카루마 타츠로",
    "fingerprint": "1f7dd6f98498b6020cce5ee7af314f8834fba9b2",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "namecard_03",
    "kind": "name_card",
    "summary": "모리나가 밀크",
    "fingerprint": "d41d7d01a5ad74e6366a5b433c6c38f55dcc9f71",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "namecard_04",
    "kind": "name_card",
    "summary": "이노우에 타쿠야",
    "fingerprint": "d4ecc33ab1d47e9eeb4ed56c94cabd7233c82e55",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "namecard_05",
    "kind": "name_card",
    "summary": "쿠가야마 리카코",
    "fingerprint": "6215f002da891f965c31a225d432b8c8f531f5a3",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "namecard_07",
    "kind": "name_card",
    "summary": "도만 세이만",
    "fingerprint": "42e5d635b2f76ed1aa2e665139e2f31cc164653f",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "namecard_08",
    "kind": "name_card",
    "summary": "카토 레이지로",
    "fingerprint": "dd29b711ca4b9003d831039f0d93aed959e01ea9",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "namecard_09",
    "kind": "name_card",
    "summary": "코토부키 카즈키",
    "fingerprint": "c2b83bf0433fc459bc93079017f2bd598255cd6d",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "namecard_11",
    "kind": "name_card",
    "summary": "요키히",
    "fingerprint": "74b0f3a2a9bacb83ac97f7c706ed138b591d1b29",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_m1",
    "kind": "photo_label",
    "summary": "M-1호",
    "fingerprint": "58c1dbd8d257c1711559e8e33823c64ef202e6b7",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_makoto",
    "kind": "photo_label",
    "summary": "후지쿠라 마코토",
    "fingerprint": "b031a20e90f6e08d8d65965999dc086b25dcb79f",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_mayu",
    "kind": "photo_label",
    "summary": "코이누바라 마유",
    "fingerprint": "8a9a3a2c365147c9f9d68458fde8e91d68c69f95",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_mea",
    "kind": "photo_label",
    "summary": "메아",
    "fingerprint": "5daa6604bf548dfd340fe4f603a2f1f61580cf36",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_meruru",
    "kind": "photo_label",
    "summary": "메루루",
    "fingerprint": "a5c87be65ce30021a319800986c5ff3ec468af7a",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_miki",
    "kind": "photo_label",
    "summary": "쿠로다 미키",
    "fingerprint": "7263f6dbe9a04bcfee73e306fe3f7ba04cc5588c",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_noromi",
    "kind": "photo_label",
    "summary": "노로타 노로미",
    "fingerprint": "b26e06032f57f53b506764ba9f443fe0fd3748f4",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_osuzu",
    "kind": "photo_label",
    "summary": "오스즈",
    "fingerprint": "ca5bb8dc572178f28a649f6d7259f08359319bcc",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_penguin",
    "kind": "photo_label",
    "summary": "펭귄 학대녀",
    "fingerprint": "30467971d16dbf23b44a3e8aa4a7570f9509d2a7",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_yaeko",
    "kind": "photo_label",
    "summary": "타카기 야에코",
    "fingerprint": "392f852c93e1460425eda8439b9f2573ea37882a",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "plate_yurika",
    "kind": "photo_label",
    "summary": "산노 유리카",
    "fingerprint": "3e70bfc66db03697f24bb38a5dfea493dbed71a0",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "tile_fuyo",
    "kind": "photo_label",
    "summary": "버\n림",
    "fingerprint": "77beec9a30765f3e7d0fd6d46887c108b1e15882",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   },
   {
    "id": "title_logo",
    "kind": "title",
    "summary": "타이틀 로고 오프닝 (gfx/title_layer_hot_v2.png, gfx/title_layer_kwae_v2.png, gfx/title_layer_oval_v2.png)",
    "fingerprint": "641f6ece3a9f7183a3abeeb90d642c03acfeefbd",
-   "state": "needs_human_review",
-   "note": "에이전트 최종 검수 2026-10-01: 통과"
+   "state": "distribution_eligible",
+   "note": "에이전트 최종 검수 2026-10-01: 통과; 사용자 일괄 승인 2026-10-01"
   }
  ]
 }
