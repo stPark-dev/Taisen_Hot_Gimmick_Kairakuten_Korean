@@ -14,3 +14,5 @@ __pycache__/
 /title_ko.png
 *.jpeg
 roms폴더에*.txt
+# Claude Code 로컬 상태
+.claude/
