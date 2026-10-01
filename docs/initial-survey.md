@@ -76,6 +76,18 @@ python3 -m pytest -q tests
 
 전작과 같은 쓰기 계획(원본 기대 바이트, 겹침·보호 범위·설명 안 되는 차이 검사, 전부 아니면 전무). 번역 표와 그림 글자 표가 비어 있고 그림 자산을 지정하지 않은 빌드는 원본 17개 파일과 바이트 단위로 같음(2026-09-29 확인, 쓰기 0건).
 
+### 5.1 검수 대상 묶음 (2026-10-01)
+
+정식판(`--policy release`) 빌드가 검사하는 표:
+
+| 표 | 대상 | 항목 |
+|---|---|---|
+| `translation/dialogue.json` | 대사 블록 문자열 | 686 |
+| `translation/graphics_text.json` | 서식 표 기반 그림 글자 | 187 |
+| `translation/graphics_review.json` | 빌드 코드(`build.GRAPHICS`)와 타이틀 오프닝 | 34 |
+
+`graphics_review.json` 항목에는 지문(사양 JSON + 사용 이미지 바이트의 SHA1)이 있어, 검수 뒤 사양·이미지가 바뀌면 개발 빌드도 실패한다. `khpatch.py sync-review`가 표를 맞추고 바뀐 항목을 `needs_review`로 되돌린다. 정식판 빌드는 세 표가 모두 `distribution_eligible`이고 검수 표·자산이 주어져야 성공하며, 실패하면 결과물을 만들지 않는다.
+
 ## 6. 사람 결정 기록
 
 | 날짜 | 결정 | 근거 |

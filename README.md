@@ -17,7 +17,7 @@
 
 | 버전 | 의미 |
 |---|---|
-| **v1.0** | **정식판**. 모든 대사·그림 글자가 사람 검수를 통과하고(`distribution_eligible`), `--policy release` 빌드가 성공하는 첫 버전 |
+| **v1.0** | **정식판**. 모든 대사·그림 글자(번역 표 2개 + 그림 글자 검수 표)가 사람 검수를 통과하고(`distribution_eligible`), `--policy release` 빌드가 성공하는 첫 버전 |
 | v0.x | 개발판. 검수 전 번역이 들어 있으며 빌드 결과물에 `"distribution": false`가 기록됨 |
 
 **현재 버전: v0.5.0 (개발판)** — 버전 번호의 기준은 [`VERSION`](VERSION) 파일입니다.
@@ -42,7 +42,7 @@ v0.4.0에서 바뀐 것 (v0.3.0 대비):
 
 v1.0까지 남은 일:
 
-- 사람 검수: 대사 686개, 그림 글자 187개가 모두 `needs_review` 상태
+- 사람 검수: 대사 686개, 그림 글자 187개, 빌드 코드의 그림 글자 34개가 모두 `needs_review` 상태
 - 크레딧 인명 독음 확인: 로마자가 없는 제작진·성우 이름은 일반적인 독음으로 적었으므로 공식 표기 확인 필요
 - 그림 글자 목록과 상태는 [`docs/initial-survey.md`](docs/initial-survey.md) 4.3절
 - 게임에서 확인하지 못한 것: 2대 연결 대전 전용 화면, 역만 이름, 모니터 조정 안내
@@ -71,7 +71,7 @@ python3 -m pytest -q tests
 
 MAME가 실행할 때 수정된 ROM 파일마다 `WRONG CHECKSUMS` 경고를 출력하는데, 한글판이면 정상입니다(원본 체크섬과 다르기 때문).
 
-번역문을 고친 뒤에는 `build`만 다시 실행하면 됩니다. 원본 ROM이 바뀌었거나 추출 규칙을 바꿨다면 먼저 `python3 tools/khpatch.py extract --source hgkairak.zip`으로 번역 표를 다시 맞춥니다(기존 번역은 유지되고, 원문이 달라진 항목은 오류로 알려 줍니다).
+번역문을 고친 뒤에는 `build`만 다시 실행하면 됩니다. 빌드 코드의 그림 글자(크레딧·이름표 등)를 고쳤다면 `sync-review`를 먼저 실행합니다. 원본 ROM이 바뀌었거나 추출 규칙을 바꿨다면 먼저 `python3 tools/khpatch.py extract --source hgkairak.zip`으로 번역 표를 다시 맞춥니다(기존 번역은 유지되고, 원문이 달라진 항목은 오류로 알려 줍니다).
 
 조작 (MAME 기본 키): 코인 `5`, 1P 스타트 `1`, 패 선택 `A`~`N`, 론 `Z`, 쯔모 `N`, 깡 `Left Ctrl`, 퐁 `Left Alt`, 치 `Space`, 리치 `Left Shift`.
 
@@ -81,6 +81,7 @@ MAME가 실행할 때 수정된 ROM 파일마다 `WRONG CHECKSUMS` 경고를 출
 |---|---|
 | [`translation/dialogue.json`](translation/dialogue.json) | 대사 686개. 원문 코드·원문·칸 수·용량(보호 필드)과 번역 `ko`·상태 `state`·메모 `note` |
 | [`translation/graphics_text.json`](translation/graphics_text.json) | 그림 글자 187개. 서식 표 주소·스타일·원문(화면에서 옮겨 적음)·번역·상태 |
+| [`translation/graphics_review.json`](translation/graphics_review.json) | 빌드 코드에 정의된 그림 글자 34개(타이틀 오프닝, 엔딩 크레딧, 이름 카드, 상대 후보 이름표, 모드 선택 사진 글자, 작파워, 버림)의 검수 상태. 글자 요약과 지문(사양·이미지 해시)이 코드와 다르면 빌드가 실패하므로, `python3 tools/khpatch.py sync-review`로 맞추면 바뀐 항목은 `needs_review`로 돌아감 |
 | [`translation/glossary.json`](translation/glossary.json) | 용어·말투 결정 (전작에서 승인된 것은 그대로 승계, 이번 작품 캐릭터 이름 등은 proposed) |
 
 번역문 규칙 (전작과 같음):

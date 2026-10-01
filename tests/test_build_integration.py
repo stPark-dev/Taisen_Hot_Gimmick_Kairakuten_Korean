@@ -622,3 +622,41 @@ def test_framed_label_keeps_box_outline(tmp_path, monkeypatch):
     assert all(out[y][1] == 65 and out[y][30] == 65 for y in range(1, 15))
     assert all(out[y][x] == 0 for y in range(2, 14) for x in (2, 29))           # gap next to the frame stays clear
     assert any(out[y][x] == 65 for y in range(3, 13) for x in range(4, 28))     # new text inside
+
+
+def _review_env(tmp_path, monkeypatch):
+    from hgkairak import review
+    d, prof = make_set(tmp_path)
+    monkeypatch.setattr(source, "PROFILE", prof)
+    monkeypatch.setattr(build, "TITLE_STRIP", False)
+    spec = {"id": "fake", "type": "nothing", "lines": ["가"]}
+    monkeypatch.setattr(build, "GRAPHICS", [spec])
+    monkeypatch.setattr(build, "graphics_writes", lambda plan, files, image, assets_dir: {})
+    table = tmp_path / "t.json"
+    build.extract(d, table)
+    rt = tmp_path / "review.json"
+    review.sync(rt, build.review_catalog(tmp_path))
+    return d, table, rt, spec
+
+
+def test_build_records_code_graphics_review_and_rejects_drift(tmp_path, monkeypatch):
+    from hgkairak import review
+    d, table, rt, spec = _review_env(tmp_path, monkeypatch)
+    m = build.build(d, table, tmp_path / "out", NANUM, assets_dir=tmp_path, review_table=rt)
+    assert m["graphics_review"]["needs_review"] == 1
+    monkeypatch.setattr(build, "GRAPHICS", [dict(spec, lines=["나"])])
+    with pytest.raises(review.ReviewError, match="stale"):
+        build.build(d, table, tmp_path / "out2", NANUM, assets_dir=tmp_path, review_table=rt)
+
+
+def test_release_build_requires_reviewed_code_graphics(tmp_path, monkeypatch):
+    from hgkairak import review
+    d, table, rt, _ = _review_env(tmp_path, monkeypatch)
+    doc = json.loads(table.read_text(encoding="utf-8"))
+    for r in doc["entries"]:
+        r.update(ko="가", state="distribution_eligible")
+    table.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+    with pytest.raises(review.ReviewError, match="release"):
+        build.build(d, table, tmp_path / "out", NANUM, policy="release", assets_dir=tmp_path, review_table=rt)
+    with pytest.raises(build.TranslationError, match="review table"):
+        build.build(d, table, tmp_path / "out", NANUM, policy="release", assets_dir=tmp_path)

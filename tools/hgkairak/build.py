@@ -10,7 +10,7 @@ import zipfile
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from . import charmap, graphics, layout, source, textblock, title
+from . import charmap, graphics, layout, review, source, textblock, title
 from .writeplan import WritePlan
 
 SCHEMA = "hgkairak-dialogue/1"
@@ -759,10 +759,22 @@ def graphics_writes(plan, files, image, assets_dir) -> dict:
     return report
 
 
+def review_catalog(assets_dir) -> dict:
+    """Review catalog of the code-defined graphics this build writes (see review.py)."""
+    layers = title.LAYERS if TITLE_STRIP else None
+    params = (title.LAYOUT, title.LAYOUT_CANVAS, title.CHOREOGRAPHY, title.FINAL_BOX)
+    return review.catalog(GRAPHICS, layers, params, assets_dir)
+
+
 def build(source_path, table_path, out_dir, font_path, font_size=15, policy="development", assets_dir=None,
-          gfx_table=None, version=None) -> dict:
+          gfx_table=None, version=None, review_table=None) -> dict:
     if policy not in ("development", "release"):
         raise ValueError(f"unknown policy {policy}")
+    if policy == "release" and (review_table is None or assets_dir is None):
+        raise TranslationError("release policy: graphics review table and assets are required")
+    review_counts = None
+    if review_table is not None and assets_dir is not None:
+        review_counts = review.check(review.read(review_table), review_catalog(assets_dir), policy)
     font_path = pathlib.Path(font_path)
     font_sha1 = hashlib.sha1(font_path.read_bytes()).hexdigest()
     table_sha1 = hashlib.sha1(pathlib.Path(table_path).read_bytes()).hexdigest()
@@ -859,7 +871,7 @@ def build(source_path, table_path, out_dir, font_path, font_size=15, policy="dev
         "numpy": __import__("numpy").__version__,
         "pillow": Image.__version__ if hasattr(Image, "__version__") else __import__("PIL").__version__,
         "entries": {"total": len(recs), "applied": len(encoded), "by_state": {s: sum(r["state"] == s for r in recs) for s in STATES}},
-        "glyphs_written": len(glyphs), "writes": len(plan.writes), "graphics": gfx,
+        "glyphs_written": len(glyphs), "writes": len(plan.writes), "graphics": gfx, "graphics_review": review_counts,
         "output_sha1": {n: hashlib.sha1(bytes(out[n])).hexdigest() for n in source.PROFILE},
     }
     _publish(pathlib.Path(out_dir), {
